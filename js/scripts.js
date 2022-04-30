@@ -1,23 +1,16 @@
-function getAllTeams() {
+async function getAllTeams() {
 	var teams = await fetch("https://www.balldontlie.io/api/v1/teams", {
 		method: "GET"
 	});
 
 	var jsonT = await teams.json();
-	console.log(jsonT);
+
+	for (let i = 0; i <= Object.keys(jsonT.data).at(-1); i++) {
+		document.getElementById('teams').innerHTML += "<div id='icon'><img width='75px' src='./Loghi/"+ jsonT.data[i].name +".png' alt='"+ jsonT.data[i].name +".png'></img>"+ jsonT.data[i].full_name + "</div>";
+	}
 }
 
 async function getAllPlayers() {
-	var player = {
-		id_team: "",
-		team: "",
-		abbreviation: "",
-		id: "",
-		firstname: "",
-		lastname: "",
-		role: ""
-	}
-
 	var players = [];
 
 	let i = 1;
@@ -27,12 +20,12 @@ async function getAllPlayers() {
 			method: "GET"
 		});
 		var jsonP = await object.json();
-		console.log(jsonP);
 
 		for (let j = 0; j <= Object.keys(jsonP.data).at(-1); j++) {
+			let player = new Object();
 			player.id_team = jsonP.data[j].team.id;
-			player.team = jsonP.data[j].full_name;
-			player.abbreviation = jsonP.data[j].abbreviation;
+			player.team = jsonP.data[j].team.full_name;
+			player.abbreviation = jsonP.data[j].team.abbreviation;
 			player.id = jsonP.data[j].id;
 			player.firstname = jsonP.data[j].first_name;
 			player.lastname = jsonP.data[j].last_name;
@@ -45,6 +38,5 @@ async function getAllPlayers() {
 	console.log(players);
 }
 
-getAllTeams();
 getAllPlayers();
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="24" y="8" width="1185" height="825" text="Browser&#xA;http://..." measuredWidth="1185" measuredHeight="825">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="4" x="24" y="60" width="1185" height="357" measuredWidth="1185" measuredHeight="357"/>
+  <widgets xsi:type="model:ButtonBar" id="5" x="24" y="416" width="1185" height="121" text="One, Two, Three" measuredWidth="1185" measuredHeight="121" selection="0">
+    <font/>
+    <items x="0" y="0" width="368" height="121" text="One"/>
+    <items x="368" y="0" width="358" height="121" text="Two"/>
+    <items x="726" y="0" width="459" height="121" text="Three"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="6" x="1160" y="461" measuredWidth="32" measuredHeight="32" icon="arrow-right (large)"/>
+  <widgets xsi:type="model:Icon" id="7" x="40" y="461" measuredWidth="32" measuredHeight="32" icon="arrow-left (large)"/>
+  <widgets xsi:type="model:Placeholder" id="8" x="24" y="536" width="1185" height="148" text="Squadra di basket selezionata dalla barra di scorrimento sopra con icona, numero di maglia e full_name" measuredWidth="1185" measuredHeight="148"/>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
