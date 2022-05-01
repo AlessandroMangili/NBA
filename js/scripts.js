@@ -15,7 +15,7 @@ async function getAllTeams() {
 
 //getAllPlayers();
 
-async function getAllPlayers() {
+async function getAllPlayersByTeam() {
 	let i = 1;
 
 	do {
@@ -50,14 +50,49 @@ async function getAllPlayers() {
 	console.log(set);
 }
 
-async function stats() {
-	var obj = await fetch("https://www.balldontlie.io/api/v1/season_averages?season=2000&player_ids[]=1043", {
+//playerIdByName("giannis an").then(data => console.log(data));
+// Funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
+async function playerIdByName(playerName) {
+	var playerObj = await fetch("https://www.balldontlie.io/api/v1/players?search="+playerName, {
 		method: "GET"
 	});
-
-	var statistiche = await obj.json();
-	console.log(statistiche);
+	
+	var player = await playerObj.json();
+	if (player.data.length > 1) {
+		alert("Presenza di più " + playerName + "! inserisci il nome completo");
+	} else if (player.data.length < 1) {
+		alert("Non ci sono giocatori con il seguente nome: " + playerName);
+	} else {
+		return player.data[0].id;
+	}
 }
 
-stats();
+//individualStats(2002, 1043);
+playerIdByName("kobe bryant")
+	.then(
+		data => individualStats(2002, data)
+		.then(
+			stats => console.log(stats) + console.log(stats.data[0].pts)
+		)
+	);
+// Funzione che data la stagione e l'id di un giocatore, ritorna le statistiche per quella stagione se il giocatore esiste e se ha giocato in quella stagione
+async function individualStats(season, player_id) {
+	if (season != null) {
+		var statsObj = await fetch("https://www.balldontlie.io/api/v1/season_averages?season="+season+"&player_ids[]="+player_id, {
+			method: "GET"
+		});
+	} else {
+		var statsObj = await fetch("https://www.balldontlie.io/api/v1/season_averages?player_ids[]="+player_id, {
+			method: "GET"
+		});	
+	}
+	var stats = await statsObj.json();
+	if (stats.data.length > 1) {
+		alert("Inserisci nome e conogme");
+	} else if (stats.data.length < 1) {
+		alert("Non ci sono statitiche riguandanti il giocatore selezionato nella stagione " + season);
+	} else {
+		return stats;
+	}
+}
 
