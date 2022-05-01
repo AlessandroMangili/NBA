@@ -1,63 +1,4 @@
-/*var set = {
-	[key] : {
-		team: "ciao",
-		abbreviation: "",
-		players : [{
-			id : "",
-			firstname : "",
-			lastname : "",
-			role : "",
-		}]
-	}
-}*/
 var set = {};
-
-/**{ 
- * 		1 : 
- * 		{
- * 			team : "Lakers",
- * 			abbrevation : "LA",
- * 			players : 
- * 			[
- * 				[ 
- * 					id : "10",
- * 					firstname : "James",
- * 					lastname : "Lebron",
- * 					role : "R",
- * 				]
- * 				[
- *	 				id : "10",
- * 					firstname : "James",
- * 					lastname : "Lebron",
- * 					role : "R",
- * 				]
- * 			]
- * 		}
- * 		2 :
- * 		{ 
- * 			team : "Lakers",
- * 			abbrevation : "LA",
- * 			players : 
- * 			[
- * 				[ 
- * 					id : "10",
- * 					firstname : "James",
- * 					lastname : "Lebron",
- * 					role : "R",
- * 				]
- * 				[
- *	 				id : "10",
- * 					firstname : "James",
- * 					lastname : "Lebron",
- * 					role : "R",
- * 				]
- * 			]
- * 		}
- * }
- * 
- * 
- * 
- **/
 
 async function getAllTeams() {
 	var teams = await fetch("https://www.balldontlie.io/api/v1/teams", {
@@ -71,6 +12,8 @@ async function getAllTeams() {
 		document.getElementById('teams').innerHTML += "<div id='icon'><img width='75px' src='./Loghi/"+ jsonT.data[i].name +".png' alt='"+ jsonT.data[i].name +".png'></img></div> <p>"+ jsonT.data[i].full_name + "</p>";
 	}
 }
+
+//getAllPlayers();
 
 async function getAllPlayers() {
 	let i = 1;
@@ -107,5 +50,14 @@ async function getAllPlayers() {
 	console.log(set);
 }
 
-getAllPlayers();
+async function stats() {
+	var obj = await fetch("https://www.balldontlie.io/api/v1/season_averages?season=2000&player_ids[]=1043", {
+		method: "GET"
+	});
+
+	var statistiche = await obj.json();
+	console.log(statistiche);
+}
+
+stats();
 
