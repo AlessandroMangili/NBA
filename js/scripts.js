@@ -58,23 +58,17 @@ async function playerIdByName(playerName) {
 	});
 	
 	var player = await playerObj.json();
-	if (player.data.length > 1) {
-		alert("Presenza di più " + playerName + "! inserisci il nome completo");
-	} else if (player.data.length < 1) {
-		alert("Non ci sono giocatori con il seguente nome: " + playerName);
-	} else {
-		return player.data[0].id;
-	}
+	return player.data;
 }
 
-//individualStats(2002, 1043);
-playerIdByName("kobe bryant")
+/*playerIdByName(playerName)
 	.then(
 		data => individualStats(2002, data)
 		.then(
 			stats => console.log(stats) + console.log(stats.data[0].pts)
 		)
 	);
+*/
 // Funzione che data la stagione e l'id di un giocatore, ritorna le statistiche per quella stagione se il giocatore esiste e se ha giocato in quella stagione
 async function individualStats(season, player_id) {
 	if (season != null) {
@@ -87,12 +81,37 @@ async function individualStats(season, player_id) {
 		});	
 	}
 	var stats = await statsObj.json();
-	if (stats.data.length > 1) {
-		alert("Inserisci nome e conogme");
-	} else if (stats.data.length < 1) {
-		alert("Non ci sono statitiche riguandanti il giocatore selezionato nella stagione " + season);
-	} else {
-		return stats;
-	}
+	return stats.data;
+
+}
+
+function stats(season, playerName) {
+	playerIdByName(playerName)
+	.then(data => 
+		{
+			console.log(data);
+			if (data.length > 1) {
+				alert("Presenza di più " + playerName + "! inserisci il nome completo");
+			} else if (data.length < 1) {
+				alert("Non ci sono giocatori con il seguente nome: " + playerName);
+			} else {
+				individualStats(season, data[0].id)
+				.then(stats => 
+					{
+						season = (season == null) ? "2021" : season;
+						if (stats.length > 1) {
+							alert("Inserisci nome e conogme");
+						} else if (stats.length < 1) {
+							alert("Non ci sono statitiche riguandanti il giocatore "+ playerName +" nella stagione " + season);
+						} else {
+							console.log(stats)
+							console.log(stats[0].pts)
+							document.getElementById('score').innerHTML = "<p>Nome : " + data[0].first_name + " " + data[0].last_name +"</p><p>Squadra : " + data[0].team.full_name +"</p><p>Stagione: "+ season +" </p><p>Media punti : " + stats[0].pts +"</p><p>Minuti giocati : " + stats[0].min;
+						}
+					}
+				)
+			}
+		}
+	);
 }
 

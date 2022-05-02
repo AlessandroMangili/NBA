@@ -13,8 +13,22 @@
   </head>
 
 <body onload="getAllTeams()">
+
+	<div id="search">
+		<label>Nome
+			<input id="searchPlayer" type="search" placeholder="Ricerca il giocatore" required size="30" onchange='stats(null,this.value)' autocomplete="off"/>
+			<input type="button" value="cerca" />
+		</label>
+	</div>
+	
+	<div id="score">	
+	</div>
+	
+	</div>
 	<div id="teams">
 	</div>
+	
+	
 	<script type="text/javascript" src="./js/scripts.js"></script> 
 </body>
 </html>
