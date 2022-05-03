@@ -6,8 +6,6 @@ async function getAllTeams() {
 	});
 
 	var jsonT = await teams.json();
-
-
 	for (let i = 0; i <= Object.keys(jsonT.data).at(-1); i++) {
 		document.getElementById('teams').innerHTML += "<div id='icon'><img width='75px' src='./Loghi/"+ jsonT.data[i].name +".png' alt='"+ jsonT.data[i].name +".png'></img></div> <p>"+ jsonT.data[i].full_name + "</p>";
 	}
@@ -106,7 +104,7 @@ function stats(season, playerName) {
 						} else {
 							console.log(stats)
 							console.log(stats[0].pts)
-							document.getElementById('score').innerHTML = "<p>Nome : " + data[0].first_name + " " + data[0].last_name +"</p><p>Squadra : " + data[0].team.full_name +"</p><p>Stagione: "+ season +" </p><p>Media punti : " + stats[0].pts +"</p><p>Minuti giocati : " + stats[0].min;
+							document.getElementById('score').innerHTML = "<p>Nome : " + data[0].first_name + " " + data[0].last_name +"</p><p>Squadra : " + data[0].team.full_name +"</p><p>Stagione: "+ season +" </p><p>Media punti : " + stats[0].pts +"</p><p> Media minuti giocati : " + stats[0].min;
 						}
 					}
 				)
