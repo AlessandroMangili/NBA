@@ -1,0 +1,15 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "All of NBA",
+    "description": "Sito All of NBA",
+    "author": {
+        "@type": "Person",
+        "name": "Serigne Mbaye & Alessandro Mangili"
+    },
+    "publisher": {
+        "@type": "CollegeOrUniversity",
+        "name": "UNIMI"
+    },
+    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+}
