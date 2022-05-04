@@ -11312,3 +11312,18 @@ html {
   background-image: url(https://wallpaperaccess.com/full/103106.jpg);
   background-size: cover;
 }
+
+/**
+Manual adding
+**/
+
+/* Class of the card image owl carousel */
+.card-img-top {
+	height: 40vh;
+	width: 100%;
+	object-fit: scale-down;
+}
+
+.card {
+	border: none;
+}
