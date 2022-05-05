@@ -33,7 +33,7 @@ async function getAllTeams() {
 	for (let i = 0; i <= Object.keys(jsonT.data).at(-1); i++) {
 		//$("#owl-carousel").append('');
 		$("#owl-carousel").append('<div class="item">New slide</div>');
-		$owl.trigger('add.owl.carousel', ['<div class="card"> <div class="ms-2 me-2"><img src="./Loghi/'+ jsonT.data[i].name +'.png" class="card-img-top"> <div class="card-body">'+ jsonT.data[i].full_name +'</div> </div> </div>']).trigger("refresh.owl.carousel");	
+		$owl.trigger('add.owl.carousel', ['<div class="card"> <div class="ms-2 me-2"><a href="#!"><img src="./Loghi/'+ jsonT.data[i].name +'.png" class="card-img-top"></a><div class="card-body">'+ jsonT.data[i].full_name +'</div> </div> </div>']).trigger("refresh.owl.carousel");	
 	}
 }
 
