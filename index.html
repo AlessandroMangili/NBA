@@ -31,13 +31,13 @@
     <body onload="getAllTeams()" class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container px-5">
                     <a class="navbar-brand" href="indexNBA.html">NBA </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#!">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href="./pages/individualStats.html">Individual statistics</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Players stats</a></li>
                             <!-- <li class="nav-item dropdown">
@@ -60,7 +60,7 @@
 							<div class="text-white">
 								<h1 class="mb-3">NBA</h1>
 								<h4 class="mb-3">Lorem ipsum</h4>
-								<a class="btn btn-outline-light btn-lg" href="#!" role="button">Who is the goat ?<a>
+								<a class="btn btn-outline-light btn-lg" href="#!" role="button">Who is the goat ?</a>
 							</div>
 						</div>
 					</div>
@@ -99,27 +99,6 @@
                     </div>
                 </div>
             </section> -->
-			
-            <!-- Testimonial section-->
-            <div class="py-5 bg-light" style=" background-image: url('./img/mj.jpg'); width: fill;">
-                <div class="container px-5 my-5" >
-                    <div class="row gx-5 justify-content-center" >
-                        <div class="col-lg-10 col-xl-7" style=" color: white;" >
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can,t accept not trying."</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW78WEE15bRQwmKytGswMLFTmIgebuTdFJ-A&usqp=CAU" alt="Michael Jordan"  width="70" height="70"/>
-                                    <div class="fw-bold">
-                                        Micheal Jordan
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        The greatest basketball player of all time
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>		
 
             <!-- Multi item carousel with team's logo -->
             <section>
@@ -139,10 +118,14 @@
 		</main>
 				
         <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
+        <footer class="bg-dark py-3 mt-auto">
+            <div class="container px-4">
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">
+                            Copyright &copy; Your Website 2022
+                        </div>
+                    </div>
                     <div class="col-auto">
                         <a class="link-light small" href="#!">Privacy</a>
                         <span class="text-white mx-1">&middot;</span>
@@ -158,7 +141,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 		<!-- Function owl carousel -->
 		<script type="text/javascript" src="./js/owl.carousel.min.js"></script> 
-		<!-- Function file -->	
+		<!-- Function teams & carousel file -->	
 		<script type="text/javascript" src="./js/script.js" ></script>
     </body>
 </html>
