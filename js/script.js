@@ -7,11 +7,11 @@ var $owl = $(".owl-carousel").owlCarousel({
 	responsive: {
 		0: {
 			items: 2,
-			dots: true
+			dots: false
 		},
 		470 : {
 			items: 3,
-			dots: true
+			dots: false
 		},
 		800 : {
 			items: 5,
