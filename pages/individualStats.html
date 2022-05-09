@@ -25,7 +25,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container px-5">
-                <a class="navbar-brand" href="#!">NBA </a>
+                <a class="navbar-brand" href="../index.html">NBA </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -39,7 +39,7 @@
 
         <!-- Testimonial section-->
         <section>
-            <div class="py-5 bg-light" style="background-image: url('../img/mj.jpg'); width: fill;">
+            <div class="py-5 bg-light" style="background-image: url('../img/mj.jpg');  background-repeat: no-repeat;">
                 <div class="container px-5 my-5" >
                     <div class="row gx-5 justify-content-center" >
                         <div class="col-lg-10 col-xl-7" style=" color: white;" >
@@ -93,17 +93,17 @@
                 </div>
             </section> -->
 
-        <section>
-        	<div id="search">
-				<label>Nome
-					<input id="playerName" type="text" placeholder="Ricerca il giocatore" size="30" autocomplete="off">
-					<input id="season" type="text" placeholder="Seleziona la stagione" size="20" autocomplete="off">
-					<input id="searchPlayer" type="button" value="Cerca" />
-				</label>
-			</div>
-		
+        <div class="input-group mb-3" style="margin-left: auto; margin-left: auto;"> 
+            <input type="text" id="playerName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off">
+            <input type="text" id="season" class="form-control" placeholder="Season" aria-label="Season" aria-describedby="basic-addon2" autocomplete="off">
+
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+            </div>
+          </div>
 			<div id="score"></div>
         </section>
+
     </main>
 
  	<!-- Footer-->
