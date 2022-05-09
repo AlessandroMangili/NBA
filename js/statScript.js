@@ -1,15 +1,12 @@
 /**
 var set = {};
-
 async function getAllPlayersByTeam() {
 	let i = 1;
-
 	do {
 		var object = await fetch("https://www.balldontlie.io/api/v1/players?page="+i+"&per_page=100", {
 			method: "GET"
 		});
 		var jsonP = await object.json();
-
 		for (let j = 0; j <= Object.keys(jsonP.data).at(-1); j++) {
 			if(set[jsonP.data[j].team.id] != undefined) {
 				set[jsonP.data[j].team.id].players.push({
@@ -48,8 +45,9 @@ btn.addEventListener('click', (e) => {
 });
 
 
-
-// Funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
+/*
+funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
+*/
 async function playerIdByName(playerName) {
 	var playerObj = await fetch("https://www.balldontlie.io/api/v1/players?search="+playerName, {
 		method: "GET"
@@ -59,8 +57,10 @@ async function playerIdByName(playerName) {
 	return player.data;
 }
 
-// Funzione che data la stagione, non nulla o vuota, e l'id di un giocatore, ritorna le statistiche per quella stagione se
-// il giocatore esiste e se ha giocato in quella stagione
+/*
+funzione che data la stagione, non nulla o vuota, e l'id di un giocatore, ritorna le statistiche per quella stagione se
+il giocatore esiste e se ha giocato in quella stagione
+*/
 async function individualStats(season, player_id) {
 	var statsObj = await fetch("https://www.balldontlie.io/api/v1/season_averages?season="+season+"&player_ids[]="+player_id, {
 		method: "GET"
@@ -97,8 +97,14 @@ function stats(season, playerName) {
 							} else if (stats.length < 1) {
 								alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
 							} else {
-								//console.log(stats);
-								document.getElementById('score').innerHTML = "<p>Nome : " + data[0].first_name + " " + data[0].last_name +"</p><p>Stagione: "+ season +" </p><p>Media punti : " + stats[0].pts +"</p><p> Media minuti giocati : " + stats[0].min;
+								let div = document.createElement("div");
+								div.setAttribute("id", data[0].id);
+								div.addEventListener('dblclick', (e) => {
+									score.removeChild(div);
+								});
+								let textnode = document.createTextNode("Nome : " + data[0].first_name + " " + data[0].last_name +" \nStagione: "+ season +" Media punti : " + stats[0].pts +" Media minuti giocati : " + stats[0].min);
+								div.appendChild(textnode);
+								document.getElementById('score').appendChild(div)
 							}
 						}
 					)
@@ -109,7 +115,14 @@ function stats(season, playerName) {
 					} else if (stats.length < 1) {
 						alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
 					} else {
-						document.getElementById('score').innerHTML = "<p>Nome : " + data[0].first_name + " " + data[0].last_name +"</p><p>Stagione: "+ season +" </p><p>Media punti : " + stats[0].pts +"</p><p> Media minuti giocati : " + stats[0].min;
+						let div = document.createElement("div");
+						div.setAttribute("id", data[0].id);
+						div.addEventListener('dblclick', (e) => {
+							score.removeChild(div);
+						});
+						let textnode = document.createTextNode("Nome : " + data[0].first_name + " " + data[0].last_name +" Stagione: "+ season +" Media punti : " + stats[0].pts +" Media minuti giocati : " + stats[0].min);
+						div.appendChild(textnode);
+						document.getElementById('score').appendChild(div)
 					}
 				}
 			}
