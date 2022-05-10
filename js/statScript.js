@@ -1,7 +1,9 @@
 var input_player = document.getElementById("playerName");
 var input_season = document.getElementById("season");
 var btn = document.getElementById("searchPlayer");
-var score = document.getElementById("score");
+var score = document.getElementById("div_score");
+var table = document.getElementById("table_score");
+var body = document.getElementById("body_score");
 
 btn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -67,14 +69,23 @@ function stats(season, playerName) {
 							} else if (stats.length < 1) {
 								alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
 							} else {
-								let div = document.createElement("div");
-								div.setAttribute("id", data[0].id);
-								div.addEventListener('dblclick', (e) => {
-									score.removeChild(div);
+								input_player.value = "";
+								input_season.value = "";
+
+								var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+
+								let t_name = row.insertCell(0);
+								let t_season = row.insertCell(1);
+								let stats_pts = row.insertCell(2);
+								let stats_min = row.insertCell(3);
+								t_name.innerText = data[0].first_name + " " + data[0].last_name;
+								t_season.innerText = season;
+								stats_pts.innerText = stats[0].pts;
+								stats_min.innerText = stats[0].min;
+
+								row.addEventListener('dblclick', (e) => {
+									row.parentNode.removeChild(row);
 								});
-								let textnode = document.createTextNode("Nome : " + data[0].first_name + " " + data[0].last_name +" Stagione: "+ season +" Media punti : " + stats[0].pts +" Media minuti giocati : " + stats[0].min);
-								div.appendChild(textnode);
-								score.appendChild(div)
 							}
 						}
 					)
@@ -85,14 +96,23 @@ function stats(season, playerName) {
 					} else if (stats.length < 1) {
 						alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
 					} else {
-						let div = document.createElement("div");
-						div.setAttribute("id", data[0].id);
-						div.addEventListener('dblclick', (e) => {
-							score.removeChild(div);
+						input_player.value = "";
+						input_season.value = "";
+
+						var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+
+						let t_name = row.insertCell(0);
+						let t_season = row.insertCell(1);
+						let stats_pts = row.insertCell(2);
+						let stats_min = row.insertCell(3);
+						t_name.innerText = data[0].first_name + " " + data[0].last_name;
+						t_season.innerText = season;
+						stats_pts.innerText = stats[0].pts;
+						stats_min.innerText = stats[0].min;
+
+						row.addEventListener('dblclick', (e) => {
+							row.parentNode.removeChild(row);
 						});
-						let textnode = document.createTextNode("Nome : " + data[0].first_name + " " + data[0].last_name +" Stagione: "+ season +" Media punti : " + stats[0].pts +" Media minuti giocati : " + stats[0].min);
-						div.appendChild(textnode);
-						score.appendChild(div)
 					}
 				}
 			}
