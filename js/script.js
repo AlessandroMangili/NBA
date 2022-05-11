@@ -53,7 +53,7 @@ function getPlayersTeam(team_id) {
 		httpGet("./Players_for_teams/player4teams.csv", function(request) {
 			if(request.status == 200) {
 				var csv = request.responseText
-				var players = csv.split('\r\n');
+				var players = csv.split('\n');
 				
 				/**
 				 * Rimuovere tutti i figli per quando viene selezionata un'altra squadra 
@@ -62,7 +62,7 @@ function getPlayersTeam(team_id) {
 	    			player_div.removeChild(player_div.lastElementChild);
 	  			}
 
-	  			for(i = 0; i < players.length; i++) {
+	  			for(let i = 0; i < players.length; i++) {
 	  				let player = players[i].split(';');
 	  				if (player[0] == team_id) {
 						let div = document.createElement("div");
