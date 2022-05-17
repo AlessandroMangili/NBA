@@ -2,14 +2,15 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "All of NBA",
-    "description": "Sito All of NBA",
+    "headline":"All of NBA",
+    "description": "Stats, roasted and individual graph of NBA players",
     "author": {
         "@type": "Person",
         "name": "Serigne Mbaye & Alessandro Mangili"
     },
     "publisher": {
-        "@type": "CollegeOrUniversity",
+        "@type": "University",
         "name": "UNIMI"
     },
-    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+    "url":"https://www.allNBA.com",
 }

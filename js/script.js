@@ -23,7 +23,7 @@ var $owl = $(".owl-carousel").owlCarousel({
 	}
 });
 
-var player_div = document.getElementById("players4team")
+var player_div = document.getElementById("players4team");
 
 /**
  * Funzione asincrona che interrogando le API, restituisce tutti i team attuali in NBA
