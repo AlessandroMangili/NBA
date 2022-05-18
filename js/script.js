@@ -30,7 +30,6 @@ var player_div = document.getElementById("players4team");
  */
 async function getAllTeams() {
 	if(localStorage.getItem("teams") == null){
-		//alert("Take data from API");
 		var object = await fetch("https://www.balldontlie.io/api/v1/teams", {
 			method: "GET"
 		});

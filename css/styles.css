@@ -11327,3 +11327,14 @@ Manual adding
 .card {
 	border: none;
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#copertina {
+  height: 55%;
+}
+}
+

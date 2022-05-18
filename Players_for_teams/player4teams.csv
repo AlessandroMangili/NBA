@@ -16,7 +16,7 @@
 5;White Coby;0;G;193 cm;88 kg;2000-02-16;North Carolina
 5;Williams Patrick;44;F;201 cm;98 kg;2001-08-26;Florida State
 2;Tatum Jayson;0;﻿AP;203 cm;95 kg;03-03-1998;Duke
-2;Morgan Juwan;4;﻿A;203 cm;105 kg;17-04-1997;Indiana
+2;Morgan Juwan;16;﻿A;203 cm;105 kg;17-04-1997;Indiana
 2;Brown Jaylen;7;G/AP;198 cm;100 kg;24-10-1996;UC Berkeley
 2;Fitts Malik;8;﻿AG;203 cm;104 kg;04-07-1997;Saint Mary's
 2;White Derrick;9;﻿G;193 cm;86 kg;02-07-1994;Colorado
@@ -33,7 +33,6 @@
 2;Williams Robert ;44;﻿C;208 cm;108 kg;14-10-1997;TexasA&M
 2;Thomas Brodric;97;﻿G;196 cm;84 kg;28-01-1997;Truman State
 14;Anthony Carmelo;7;AP/AG;201 cm;108 kg;29-05-1984;Syracuse
-14;Ariza Trevor;1;AP/AG;203 cm;98 kg;30-06-1985;UCLA
 14;Augustin D.J.;4;﻿P;180 cm;83 kg;10-11-1987;Texas
 14;Bazemore Kent;9;G/AP;193 cm;88 kg;01-07-1989;Old Dominion
 14;Bradley Avery;20;﻿G;191 cm;82 kg;26-11-1990;Texas
@@ -49,6 +48,7 @@
 14;Nunn Kendrick ;12;P/G;188 cm;86 kg;03-08-1995;Oakland
 14;Reaves Austin;15;﻿G;196 cm;93 kg;29-05-1998;Oklahoma
 14;Westbrook Russell;0;﻿P;189 cm;91 kg;12-11-1988;UCLA
+14;Mac McClung;37;G;188 cm;84 kg;6-01-1999;Texas Tech
 10;Bjelica Nemanja;8;AG/C;208 cm;106 kg;1988-05-09;Serbia
 10;Chiozza Chris;2;﻿P;180 cm;79 kg;1995-11-25;Florida
 10;Curry Stephen;30;﻿P;191 cm;84 kg;1988-03-14;Davidson
@@ -63,6 +63,7 @@
 10;Porter Otto;32;﻿AG;203 cm;90 kg;1993-06-03;Georgetown
 10;Thompson Klay;11;﻿G;198 cm;98 kg;1990-02-08;Washington State
 10;Toscano Juan;95;AP/AG;198 cm;95 kg;1993-04-10;Marquette
+10;Weatherspoon Quinndary;15;G;191 cm;93 kg;10-09-1996;Mississippi State
 10;Wiggins Andrew;22;﻿AP;201 cm;89 kg;1995-02-23;Kansas
 10;Wiseman James ;33;﻿C;213 cm;109 kg;2001-03-31;Memphis
 27;Walker Lonnie;1;﻿G;196 cm;89 kg;14-12-1998;Miami
@@ -84,12 +85,12 @@
 27;Langford Romeo;35;﻿G;193 cm;98 kg;25-10-1999;Indiana
 23;Bassey Charles;23;AG/C;208 cm;104 kg;28-10-2000;Western Kentucky
 23;Brown Charlie;16;﻿G;198 cm;90 kg;02-02-1997;Saint Joseph's
-23;Cauley-Stein Willie;00;﻿C;213 cm;109 kg;18-08-1993;Kentucky
 23;Embiid Joel;21;﻿C;213 cm;127 kg;16-03-1994;Kansas
 23;Green Danny;14;G/AP;198 cm;98 kg;22-06-1987;North Carolina
 23;Harden James;1;P/G;196 cm;100 kg;26-08-1989;Arizona State
 23;Harris Tobias;12;﻿AG;203 cm;103 kg;15-07-1992;Tennessee
 23;Joe Isaiah;7;P/G;193 cm;75 kg;02-07-1999;Arkansas
+23;Jordan DeAndre;9;﻿C;211 cm;120 kg;21-07-1998;Texas A&M
 23;Korkmaz Furkan;30;G/AP;201 cm;92 kg;24-07-1997;Turchia
 23;Maxey Tyrese;0;P/G;188 cm;91 kg;04-10-2000;Kentucky
 23;Milton Shake;18;G/AP;196 cm;93 kg;26-09-1996;Southern Methodist
@@ -100,6 +101,7 @@
 23;Springer Jaden;11;﻿G;191 cm;92 kg;25-09-1992;Tennessee
 23;Thybulle Matisse;22;G/AP;196 cm;91 kg;04-03-1997;Washington
 9;Bagley Marvin;35;﻿AG;211 cm;106 kg;14-03-1999;Duke
+9;Carsen Edwards;4;G;180 cm;91 kg;12-03-1998;Purdue
 9;Bey Saddiq;41;﻿AP;201 cm;98 kg;09-04-1999;Villanova
 9;Cunningham Cade;2;﻿G;203 cm;100 kg;25-09-2001;Oklahoma State
 9;Diallo Hamidou;6;﻿G;196 cm;90 kg;31-07-1998;Kentucky
@@ -109,25 +111,22 @@
 9;Jackson Frank;5;P/G;191 cm;93 kg;04-05-1998;Duke
 9;Joseph Cory;18;P/G;190 cm;86 kg;20-08-1991;Texas
 9;Lee Saben;38;P/G;188 cm;83 kg;23-06-1999;Vanderbilt
+9;McGruder Rodney;17;G;193 cm;93 kg;29-08-1991;Kansas State
+9;Key Braxton;17;G;203 cm;102 kg;14-02-1997;Virginia
 9;Livers Isaiah;12;﻿A;198 cm;105 kg;28-07-1998;Michigan
 9;Olynyk Kelly;13;A/C;211 cm;109 kg;19-04-1991;Gonzaga
-9;Palmer Trayvon;15;﻿G;198 cm;91 kg;13-11-1994;Chicago State
 9;Pickett Jamorko;24;﻿AP;206 cm;93 kg;24-12-1997;Georgetown
-9;Robinson Justin;55;P/G;185 cm;88 kg;12-10-1997;Virginia Tech
-9;Smith Chris;0;﻿AP;206 cm;98 kg;24-12-1999;UCLA
-9;Stanley Cassius;2;﻿G;198 cm;88 kg;18-08-1999;Duke
 9;Stewart Isaiah;28;﻿C;203 cm;113 kg;22-05-2001;Washington
-9;Walton Derrick;10;P/G;183 cm;84 kg;03-04-1995;Michigan
 16;Adebayo Bam;13;﻿C;206 cm;116 kg;18-07-1997;Kentucky
 16;Butler Jimmy;22;G/AP;201 cm;104 kg;14-09-1989;Marquette
 16;Dedmon Dewayne;21;﻿C;213 cm;111 kg;12-08-1989;Southern California
-16;Guy Kyle;5;﻿G;185 cm;76 kg;11-06-1997;Virginia
 16;Haslem Udonis;40;﻿AG;203 cm;107 kg;09-06-1980;Florida
 16;Herro Tyler;14;﻿G;196 cm;88 kg;20-01-2000;Kentucky
 16;Highsmith Haywood;24;﻿AP;193 cm;100 kg;09-12-1996;Wheeling
 16;Lowry Kyle;7;﻿P;183 cm;104 kg;25-03-1986;Villanova
 16;Martin Caleb;16;﻿AP;196 cm;93 kg;28-09-1995;Nevada
 16;Morris Markieff;8;﻿AG;206 cm;111 kg;02-09-1989;Kansas
+16;Mulder Mychal;12;﻿G;191 cm;88 kg;12-08-1994;Kentucky
 16;Oladipo Victor;4;﻿G;193 cm;97 kg;04-05-1994;Indiana
 16;Robinson Duncan;55;G/AP;201 cm;98 kg;22-04-1994;Michigan
 16;Smart Javonte;15;﻿P;193 cm;93 kg;23-06-1996;LSU
@@ -135,113 +134,126 @@
 16;Tucker P.J.;17;﻿AG;196 cm;111 kg;05-05-1985;Texas
 16;Vincent Gabe;2;P/G;191 cm;91 kg;14-06-1996;UC Santa Barbara
 16;Yurtseven Ömer;77;﻿C;213 cm;125 kg;19-06-1988;Georgetown
-11;Augustin D.J.;14;﻿P;180 cm;83 kg;11-10-1987;Texas
-11;Brooks Armoni;7;﻿G;191 cm;88 kg;05-06-1998;Houston
+11;Wall John;1;﻿G;193 cm;95 kg;06-09-1990;Kentucky
+11;Nwaba David;2;﻿AP;196 cm;99 kg;14-01-1993;Cal Poly San Luis Obispo
+11;Porter Jr. Kevin;3;﻿AP;193 cm;92 kg;04-05-2000;Southern California
+11;Martin Jr. Kenyon;6;﻿AG;198 cm;98 kg;06-01-2001;IMG Academy (FL)
+11;Tate Jae'Sean;8;﻿AG;193 cm;104 kg;28-10-1995;Ohio State
 11;Christopher Josh;9;﻿G;191 cm;98 kg;08-12-2001;Arizona State
 11;Gordon Eric;10;﻿G;193 cm;98 kg;25-12-1988;Indiana
-11;Green Jalen;0;﻿G;193 cm;84 kg;09-09-2002;NBA G League Ignite
-11;House Danuel;4;G/AP;201 cm;100 kg;07-06-1993;Texas A&M
-11;Martin Jr. Kenyon;6;﻿AG;198 cm;98 kg;06-01-2001;IMG Academy (FL)
+11;Nix Daishen;15;﻿G;191 cm;103 kg;13-02-2002;Trinity International
+11;Garuba Usman;16;﻿AP;203 cm;104 kg;9-03-2002;Real Madrid
+11;Schroder Dennis;17;﻿G;185 cm;78 kg;15-09-1993;Braunschweig
+11;Bruno Fernando;20;﻿AP/C;206 cm;109 kg;15-08-1998;Maryland
+11;Queen Trevelin;21;﻿G;198 cm;86 kg;25-01-1997;New Mexico State
 11;Mathews Garrison;25;﻿G;196 cm;98 kg;24-10-1996;Lipscomb
-11;Nix Daishen;25;﻿G;191 cm;103 kg;13-02-2002;Trinity International
-11;Nwaba David;15;﻿AP;196 cm;99 kg;14-01-1993;Cal Poly San Luis Obispo
-11;Porter Jr. Kevin;3;﻿AP;193 cm;92 kg;04-05-2000;Southern California
 11;Şengün Alperen;28;﻿C;208 cm;110 kg;25-07-2002;Turchia
-11;Tate Jae'Sean;8;﻿AG;193 cm;104 kg;28-10-1995;Ohio State
-11;Wall John;1;﻿G;193 cm;95 kg;06-09-1990;Kentucky
+11;Lamb Anthony;33;AP;198 cm;103 kg;20-01-1998;Vermont
 11;Wood Christian;35;﻿AG;208 cm;97 kg;27-09-1995;UNLV
-26;Bjelica Nemanja;88;﻿AG;208 cm;106 kg;09-05-1988;Serbia
-26;Guy Kyle;7;﻿G;188 cm;79 kg;11-08-1997;Virginia
-26;Ferrell Yogi;3;﻿G;183 cm;82 kg;09-05-1993;Indiana
-26;Joseph Cory;9;﻿G;190 cm;86 kg;20-08-1991;Texas
-26;James Justin;10;﻿AP;201 cm;86 kg;24-01-1997;Wyoming
-26;Fox De'Aaron;5;﻿P;191 cm;79 kg;20-12-1997;Kentucky
-26;Jeffries DaQuan;19;G/AP;196 cm;104 kg;30-08-1997;Tulsa
-26;Hield Buddy;24;﻿G;193 cm;97 kg;17-12-1993;Oklahoma
-26;Holmes Richaun;22;﻿AG;208 cm;107 kg;15-10-1993;Bowling Green
-26;Parker Jabari;33;﻿AP;203 cm;111 kg;15-03-1995;Duke
-26;Bagley Marvin;35;﻿AG;211 cm;106 kg;14-03-1999;Duke
 26;Barnes Harrison;40;﻿AP;203 cm;102 kg;30-05-1992;North Carolina
+26;Davis Terence;3;﻿G;193 cm;91 kg;16-05-1997;Mississippi
+26;DiVincenzo Donte;0;﻿G;193 cm;92 kg;31-01-1997;Villanova
+26;Fox De'Aaron;5;﻿P;191 cm;79 kg;20-12-1997;Kentucky
+26;Harkless Maurice;8;﻿AP/G;201 cm;100 kg;11-05-1993;St. John's
+26;Holiday Justin;9;﻿AP/G;198 cm;82 kg;5-04-1989;Washington
+26;Holmes Richaun;22;﻿AG;208 cm;107 kg;15-10-1993;Bowling Green
+26;Jackson Josh;55;G/AP;203 cm;94 kg;10-02-1997;Kansas
+26;Jones Damian;30;C;211 cm;111 kg;30-06-1995;Vanderbilt
+26;Lamb Jeremy;26;G/AP;196 cm;82 kg;30-05-1992;Connecticut
+26;Len Alex;25;C;213 cm;113 kg;16-06-1993;Maryland
+26;Lyles Trey;41;AP;206 cm;106 kg;5-11-1995;Kentucky
+26;Metu Chimezie;7;AP/C;206 cm;102 kg;22-03-1997;Southern California
+26;Mitchell Davion;15;G;183 cm;92 kg;5-09-1998;Baylor
+26;Queta Neemias;88;C;213 cm;112 kg;13-07-1999;Utah State
+26;Sabonis Domantas;10;AP/C;211 cm;109 kg;3-05-1996;Gonzaga
 1;Bogdanović Bogdan;13;﻿G;198 cm;100 kg;18-08-1992;Serbia
+1;Brown Chaudee Jr.;38;﻿AP;196 cm;98 kg;4-12-1998;Michigan
 1;Capela Clint;15;﻿C;208 cm;109 kg;18-05-1994;Svizzera
 1;Collins John;20;AG/C;208 cm;107 kg;23-09-1997;Wake Forest
 1;Cooper Sharife;2;﻿P;185 cm;82 kg;11-06-2001;Auburn
 1;Dieng Gorgui;10;﻿C;208 cm;114 kg;18-01-1990;Louisville
 1;Gallinari Danilo;8;AP/AG;209 cm;106 kg;08-08-1988;Italia
 1;Huerter Kevin;3;G/AP;201 cm;88 kg;27-08-1998;Maryland
-1;Hunter De'Andre;12;﻿AP;203 cm;102 kg;02-12-1997;Virginia
+1;Hunter De'Andre;12;﻿AP;203 cm;102 kg;02-12-1997;Vi.rginia
 1;Johnson Jalen;1;﻿AP;203 cm;95 kg;18-12-2001;Duke
 1;Knox Kevin;5;﻿AP;201 cm;98 kg;11-08-1999;Kentucky
-1;Luwawu-Cabarrot Timothé;1;G/AP;201 cm;98 kg;09-05-1995;Francia
+1;Luwawu-Cabarrot Timothé;7;G/AP;201 cm;98 kg;09-05-1995;Francia
 1;Mays Skylar;4;﻿G;193 cm;93 kg;05-09-1997;LSU
 1;Okafor Jahlil;14;AG/C;208 cm;122 kg;15-12-1995;Duke
 1;Okongwu Onyeka ;17;AG/C;206 cm;111 kg;11-12-2000;Southern California
 1;Williams Lou;6;P/G;185 cm;79 kg;27-10-1986;South Gwinnett HS
 1;Wright Delon;0;P/G;196 cm;84 kg;26-04-1992;Utah
 1;Young Trae;11;﻿P;188 cm;81 kg;19-09-1998;Oklahoma
-25;Collins Zach;33;AG/C;213 cm;104 kg;19-11-1997;Gonzaga
-25;Lillard Damian;0;﻿P;191 cm;88 kg;15-07-1990;Weber State
-25;McCollum C. J.;3;﻿G;191 cm;86 kg;19-09-1991;Lehigh
-25;Nurkić Jusuf;27;﻿C;213 cm;127 kg;23-08-1994;Bosnia Herzegovina
+25;Bledsoe Eric;5;G;213 cm;104 kg;9-12-1989;Kentucky
 25;Blevins Keljin;21;﻿G;193 cm;91 kg;24-11-1995;Montana State
-25;Covington Robert;23;﻿A;201 cm;95 kg;14-12-1990;Tennessee State
-25;Elleby C. J.;16;G/AP;198 cm;91 kg;16-06-2000;Washington State
-25;Giles Harry;4;AG/C;211 cm;109 kg;22-04-1998;Duke
-25;Hollis-Jefferson Rondae;2;﻿AP;198 cm;98 kg;03-01-1995;Arizona
-25;Jones Derrick;5;﻿AP;196 cm;95 kg;15-02-1997;UNLV
-25;Kanter Enes;11;﻿C;208 cm;113 kg;20-05-1992;Turchia
-25;Leaf T.J.;18;﻿AG;208 cm;101 kg;30-04-1997;UCLA
+25;Brown Greg;4;AP;198 cm;91 kg;1-09-2001;Texas Austin
+25;Dunn kris;18;G;198 cm;91 kg;18-03-1994;Providence
+25;Elleby C.J.;16;G/AP;198 cm;91 kg;16-06-2000;Washington State
+25;Eubanks Drew;24;AP/C;198 cm;91 kg;1-02-1997;Oregon State
+25;Hart Josh;11;G;198 cm;91 kg;6-03-1995;Villanova
+25;Hughes Elijah;19;G;198 cm;91 kg;10-03-1998;Syracuse
+25;Ingles Joe;00;AP/G;198 cm;91 kg;2-10-1987;Maccabi Tel Aviv
+25;Johnson Keon;6;G;196 cm;100 kg;10-3-2002;North Carolina
+25;Lillard Damian;0;﻿P;191 cm;88 kg;15-07-1990;Weber State
 25;Little Nassir;9;G/AP;196 cm;100 kg;11-02-2000;North Carolina
-25;Powell Norman;24;﻿G;191 cm;98 kg;25-05-1993;UCLA
+25;Louzada Didi;35;G;196 cm;100 kg;2-07-1999;Sydney Kings
+25;Mclemore Ben;23;G;196 cm;100 kg;11-02-1993;Kansas
+25;Nurkić Jusuf;27;﻿C;213 cm;127 kg;23-08-1994;Bosnia Herzegovina
+25;Perry Reggie;10;﻿AP/C;191 cm;82 kg;21-03-1999;Mississippi
 25;Simons Anfernee;1;﻿G;191 cm;82 kg;08-06-1999;IMG Academy
-30;Beal Bradley;3;﻿G;190 cm;94 kg;28-06-1993;Florida
-30;Porziņģis Kristaps;6;AG/C;221 cm;109 kg;02-08-1995;Lettonia
-30;Caldwell-Pope Kentavious;1;﻿G;196 cm;93 kg;18-02-1993;Georgia
-30;Bryant Thomas;13;﻿C;208 cm;112 kg;31-07-1997;Indiana
-30;Gafford Daniel;21;﻿C;211 cm;106 kg;01-10-1998;Arkansas
-30;Hachimura Rui;8;﻿A;203 cm;104 kg;08-02-1998;Gonzaga
-30;Hutchison Chandler;1;﻿A;201 cm;89 kg;26-04-1996;Boise State
-30;Mathews Garrison;24;﻿G;196 cm;97 kg;24-10-1996;Lipscomb
-30;Smith Ish;14;﻿P;183 cm;79 kg;05-07-1988;Wake Forest
+25;Watford Trendon;1;﻿G;191 cm;82 kg;9-11-2000;Louisiana
+25;Williams Brandon;8;﻿G;191 cm;82 kg;22-11-1999;Arizona
+25;Winslow Justise;26;﻿AP/G;191 cm;82 kg;26-03-1996;Duke
 30;Avdija Deni;9;﻿AP;206 cm;95 kg;03-01-2001;Israele
+30;Beal Bradley;3;﻿G;190 cm;94 kg;28-06-1993;Florida
+30;Bryant Thomas;13;﻿C;208 cm;112 kg;31-07-1997;Indiana
+30;Caldwell-Pope Kentavious;1;﻿G;196 cm;93 kg;18-02-1993;Georgia
+30;Carey Vernon Jr.;22;﻿AP/C;206 cm;122 kg;25-02-2001;Duke
+30;Gafford Daniel;21;﻿C;211 cm;106 kg;01-10-1998;Arkansas
 30;Gill Anthony;16;﻿AG;201 cm;104 kg;17-10-1992;Virginia
-30;Vernon Carey Jr.;22;;﻿AG;206 cm;122 kg;02-25-2001;Miami
-30;Satoranský Tomáš;31;﻿P;201 cm;95 kg;30-10-1991;Repubblica Ceca
-30;Lopez Robin;15;﻿C;213 cm;127 kg;01-04-1988;Stanford
-30;Neto Raul;19;﻿P;185 cm;82 kg;19-05-1992;Brasile
+30;Hachimura Rui;8;﻿A;203 cm;104 kg;08-02-1998;Gonzaga
+30;Kispert Corey;24;﻿AP;198 cm;102 kg;3-03-1999;Gonzaga
 30;Kuzma Kyle;33;﻿AG;208 cm;100 kg;24-07-1995;Utah
+30;Neto Raul;19;﻿P;185 cm;82 kg;19-05-1992;Brasile
+30;Porziņģis Kristaps;6;AG/C;221 cm;109 kg;02-08-1995;Lettonia
+30;Satoranský Tomáš;31;﻿P;201 cm;95 kg;30-10-1991;Repubblica Ceca
+30;Schakel Jordan;20;﻿G;198 cm;91 kg;13-06-1998;San Diego State
+30;Smith Ish;14;﻿P;183 cm;79 kg;05-07-1988;Wake Forest
+30;Todd Isaiah;14;﻿AP;206 cm;99 kg;17-10-2001;NBA G League
 30;Winston Cassius;5;﻿P;185 cm;84 kg;28-02-1998;Michigan State
-7;Richardson Josh;0;﻿G;196 cm;91 kg;15-09-1993;Tennessee
-7;Terry Tyrell;1;﻿P;191 cm;77 kg;28-09-2000;Stanford
-7;Bey Tyler;2;﻿G;201 cm;98 kg;10-02-1998;Colorado
-7;Burke Trey;3;﻿P;183 cm;84 kg;12-11-1992;Michigan
-7;Porziņģis Kristaps;6;AG/C;221 cm;109 kg;02-08-1995;Lettonia
-7;Powell Dwight;7;﻿C;211 cm;109 kg;20-07-1991;Stanford
-7;Green Josh;8;﻿G;198 cm;95 kg;16-11-2000;Arizona
-7;Finney-Smith Dorian;10;﻿AP;203 cm;95 kg;04-05-1993;Florida
-7;Hardaway Jr. Tim;11;﻿G;198 cm;93 kg;16-03-1992;Michigan
-7;Hinton Nate;14;﻿G;196 cm;95 kg;08-06-1999;Houston
+7;Bertans Davis;44;﻿AP;196 cm;91 kg;12-11-1992;Baskonia
+7;Brown Sterling;6;AP/G;221 cm;109 kg;10-02-1995;Southern Methodist
 7;Brunson Jalen;13;﻿P;191 cm;86 kg;31-08-1996;Villanova
-7;Cauley-Stein Willie;33;﻿C;213 cm;109 kg;18-08-1993;Kentucky
+7;Bullock Reggie;25;﻿G/AP;213 cm;109 kg;16-03-1991;North Carolina
+7;Burke Trey;3;﻿P;183 cm;84 kg;12-11-1992;Michigan
+7;Chriss Marquese;32;﻿AP;201 cm;98 kg;2-07-1007;Washington
+7;Dinwiddie Spencer;26;﻿G;191 cm;91 kg;6-04-1993;Colorado
 7;Dončić Luka;77;P/G;203 cm;103 kg;28-02-1999;Slovenia
+7;Finney-Smith Dorian;10;﻿AP;203 cm;95 kg;04-05-1993;Florida
+7;Green Josh;8;﻿G;198 cm;95 kg;16-11-2000;Arizona
+7;Hardaway Jr. Tim;11;﻿G;198 cm;93 kg;16-03-1992;Michigan
 7;Kleber Maximilian;42;﻿AG;211 cm;100 kg;29-01-1992;Germania
 7;Marjanović Boban;51;﻿C;221 cm;132 kg;15-08-1988;Serbia
-7;Redick JJ;17;﻿G;191 cm;91 kg;24-06-1984;Duke
-6;Love Kevin;0;AG/C;203 cm;113 kg;07-09-1988;UCLA
-6;Sexton Collin;2;﻿P;185 cm;86 kg;04-01-1999;Alabama
+7;Ntilikina Frank;21;﻿G;196 cm;91 kg;28-07-1998;Strasbourg 
+7;Pinson Theo;1;﻿G/AP;191 cm;77 kg;5-11-1995;North Carolina
+7;Powell Dwight;7;﻿C;211 cm;109 kg;20-07-1991;Stanford
 6;Allen Jarrett;31;﻿C;211 cm;111 kg;21-04-1998;Texas
-6;Osman Cedi;16;﻿AP;203 cm;88 kg;08-04-1995;Turchia
-6;Garland Darius;10;﻿G;188 cm;79 kg;26-01-2000;Vanderbilt
-6;LeVert Caris;22;﻿G;198 cm;93 kg;25-08-1994;Michigan
-6;Markkanen Lauri;24;﻿AG;213 cm;109 kg;22-05-1997;Arizona
+6;Brown Moses;6;C;218 cm;111 kg;13-10-1999;UCLA
 6;Davis Ed;21;﻿AG;206 cm;99 kg;05-06-1989;North Carolina
+6;Garland Darius;10;﻿G;188 cm;79 kg;26-01-2000;Vanderbilt
+6;Goodwin Brandon;00;G;183 cm;82 kg;2-10-1995;Florida Gulf Coast
+6;LeVert Caris;3;﻿G;198 cm;93 kg;25-08-1994;Michigan
+6;Love Kevin;0;AG/C;203 cm;113 kg;07-09-1988;UCLA
+6;Markkanen Lauri;24;﻿AG;213 cm;109 kg;22-05-1997;Arizona
 6;Mobley Evan;4;﻿C;213 cm;93 kg;18-06-2001;Southern California
+6;Nembhard RJ;5;P/G;193 cm;91 kg;22-03-1999;Texas Christian
+6;Okoro Isaac;35;﻿G;198 cm;102 kg;26-01-2001;Auburn
+6;Osman Cedi;16;﻿AP;203 cm;88 kg;08-04-1995;Turchia
+6;Rondo Rajon;1;P/G;185 cm;82 kg;22-02-1986;Kentucky
+6;Sexton Collin;2;﻿P;185 cm;86 kg;04-01-1999;Alabama
 6;Stevens Lamar;8;﻿AP;203 cm;102 kg;09-07-1997;Penn State
 6;Wade Dean;32;﻿AG;208 cm;103 kg;20-11-1996;Kansas State
-6;Rondo Rajon;1;P/G;185 cm;82 kg;22-02-1986;Kentucky
 6;Windler Dylan;9;﻿G;203 cm;91 kg;22-09-1996;Belmont
-6;Okoro Isaac;35;﻿G;198 cm;102 kg;26-01-2001;Auburn
-6;Nembhard RJ;5;P/G;193 cm;91 kg;22-03-1999;Texas Christian
 28;Achiuwa Precious;5;AG/C;203 cm;102 kg;19-09-1999;Mempihs
 28;Anunoby OG;3;﻿A;203 cm;107 kg;17-07-1997;Indiana
 28;Banton Dalano;1;﻿P;206 cm;93 kg;07-11-1999;Nebraska
