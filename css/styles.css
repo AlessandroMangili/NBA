@@ -11329,12 +11329,28 @@ Manual adding
 }
 
 html, body {
-    max-width: 100%;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 #copertina {
-  height: 55%;
-}
+    height: 850px;
+  }
+
+@media (max-width: 1000px) {
+  #copertina {
+    height: 700px;
+  }
 }
 
+@media (max-width: 725px) {
+  #copertina {
+    height: 70%;
+  }
+}
+
+@media (max-width: 350px) {
+  #copertina {
+    height: 60%;
+  }
+}
