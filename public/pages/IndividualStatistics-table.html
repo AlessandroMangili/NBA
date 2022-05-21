@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+		<meta name="keywords" content="NBA, basket, basket america">
+		<script type="application/ld+json" src="../../schema.json"></script>
+
+		<title>All of NBA</title>
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../stylesheet/style.css" rel="stylesheet" />
+	</head>
+<body class="d-flex flex-column h-100">
+	<main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="../index.html">NBA </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownIndividualStatistics" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Individual statistics</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownIndividualStatistics">
+                                <li><a class="dropdown-item" href="#!">Table</a></li>
+                                <li><a class="dropdown-item" href="IndividualStatistics-chart.html">Graph</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Players stats</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Testimonial section-->
+        <section>
+            <div class="py-5 bg-light" style="background-image: url('../images/mj.jpg');  background-repeat: no-repeat;">
+                <div class="container px-5 my-5" >
+                    <div class="row gx-5 justify-content-center" >
+                        <div class="col-lg-10 col-xl-7" style=" color: white;" >
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can,t accept not trying."</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW78WEE15bRQwmKytGswMLFTmIgebuTdFJ-A&usqp=CAU" alt="Michael Jordan"  width="70" height="70"/>
+                                    <div class="fw-bold">
+                                        Micheal Jordan
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        The greatest basketball player of all time
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+       	</section>	
+
+        <section>
+            <div class="input-group mb-3" style="margin-left: auto; margin-left: auto;"> 
+                <input type="text" id="playerName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off">
+                <input type="text" id="season" class="form-control" placeholder="Season" aria-label="Season" aria-describedby="basic-addon2" autocomplete="off">
+
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+                </div>
+            </div>
+            <div id="div_score" align="center">
+                <table id="table_score">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Stagione</th>
+                            <th>Media punti</th>
+                            <th>Media minuti giocati</th>
+                        </tr>
+                    </thead>
+                    <tbody id="body_score">
+                    </tbody>
+                </table>         
+            </div>
+        </section>
+    </main>
+
+ 	<!-- Footer-->
+    <footer class="bg-dark py-3 mt-auto">
+        <div class="container px-4">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+            		<div class="small m-0 text-white">
+            			Copyright &copy; Your Website 2022
+            		</div>
+               	</div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+	
+	<!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Function statistics file -->
+    <script type="text/javascript" src="../javascript/statScript.js"></script> 
+  </body>
+</html>
