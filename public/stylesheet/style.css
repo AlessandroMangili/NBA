@@ -2994,6 +2994,7 @@ textarea.form-control-lg {
 .btn {
   display: inline-block;
   font-weight: 400;
+  width: 50%;
   line-height: 1.5;
   color: #212529;
   text-align: center;
@@ -11335,7 +11336,28 @@ html, body {
 
 #copertina {
     height: 850px;
-  }
+}
+
+#form-input {
+  width:50%
+}
+
+#errors {
+  color:red;
+}
+
+/*#testimonial {
+  position: relative;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  color: white;
+  display: block;
+}*/
+
 
 @media (max-width: 1000px) {
   #copertina {

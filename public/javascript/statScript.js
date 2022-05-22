@@ -7,6 +7,7 @@ var btn = document.getElementById("searchPlayer");
 var score = document.getElementById("div_score");
 var table = document.getElementById("table_score");
 var body = document.getElementById("body_score");
+var error = document.getElementById("errors");
 
 btn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -52,25 +53,28 @@ le statistiche della stagione passata come parametro, se null allora sarà la st
 giocatore abbia giocato in quella stagione.
 */
 function stats(season, playerName) {
+	if (playerName == "") {
+		error.innerText = "Devi inserire il nome di un giocatore";
+		return;
+	}
+	
 	season = season === "" ? new Date().getFullYear() - 1: season;
 
 	playerIdByName(playerName)
 	.then(data => 
 		{
 			if (data.length > 1) {
-				alert("Presenza di più " + playerName + "! inserisci il nome completo");
+				error.innerText = "Presenza di più " + playerName + "! inserisci il nome completo";
 			} else if (data.length < 1) {
-				alert("Non ci sono giocatori con il seguente nome: " + playerName);
+				error.innerText = "Non ci sono giocatori con il seguente nome: " + playerName;
 			} else {
 				if(localStorage.getItem(season + " " + data[0].id) == null) {
 					individualStats(season, data[0].id)
 					.then(stats => 
 						{
 							localStorage.setItem(season + " " + data[0].id, JSON.stringify(stats));
-							if (stats.length > 1) {
-								alert("Inserisci nome e conogme");
-							} else if (stats.length < 1) {
-								alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
+							if (stats.length < 1) {
+								error.innerText = "Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season;
 							} else {
 								input_player.value = "";
 								input_season.value = "";
@@ -94,13 +98,12 @@ function stats(season, playerName) {
 					)
 				} else {
 					var stats = JSON.parse(localStorage.getItem(season + " " + data[0].id));
-					if (stats.length > 1) {
-						alert("Inserisci nome e conogme");
-					} else if (stats.length < 1) {
-						alert("Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season);
+					if (stats.length < 1) {
+						error.innerText = "Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season;
 					} else {
 						input_player.value = "";
 						input_season.value = "";
+						error.innerText = "";
 
 						var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
 
