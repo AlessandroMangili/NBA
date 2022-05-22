@@ -78,6 +78,7 @@ function stats(season, playerName) {
 							} else {
 								input_player.value = "";
 								input_season.value = "";
+								error.innerText = "";
 
 								var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
 

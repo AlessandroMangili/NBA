@@ -11346,6 +11346,10 @@ html, body {
   color:red;
 }
 
+#table_score {
+  text-align: center;
+}
+
 /*#testimonial {
   position: relative;
 }
