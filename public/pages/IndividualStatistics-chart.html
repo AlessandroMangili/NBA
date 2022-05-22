@@ -44,38 +44,46 @@
 
         <!-- Testimonial section-->
         <section>
-            <div class="py-5 bg-light" style="background-image: url('../images/mj.jpg');  background-repeat: no-repeat;">
-                <div class="container px-5 my-5" >
-                    <div class="row gx-5 justify-content-center" >
-                        <div class="col-lg-10 col-xl-7" style=" color: white;" >
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can,t accept not trying."</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW78WEE15bRQwmKytGswMLFTmIgebuTdFJ-A&usqp=CAU" alt="Michael Jordan"  width="70" height="70"/>
-                                    <div class="fw-bold">
-                                        Micheal Jordan
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        The greatest basketball player of all time
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div id="testimonial" class="row py-5">
+                <img src="../images/mj.jpg" alt="Michael Jordan" width="100%" height="100%" >
+                <!--<div class="centered">
+                    <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can,t accept not trying."</div>
+                    <div class="fw-bold">
+                        Micheal Jordan
+                        <span class="fw-bold text-primary mx-1">/</span>
+                        The greatest basketball player of all time
                     </div>
-                </div>
-            </div>  
-        </section>  
+                </div>-->
+            </div>
+        </section>
 
         <section>
-            <div class="input-group mb-3" style="margin-left: auto; margin-left: auto;"> 
-                <input type="text" id="playerName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off" style="visibility: hidden">
-                <input type="text" id="season" class="form-control" placeholder="Season" aria-label="Season" aria-describedby="basic-addon2" autocomplete="off">
-
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+            <div class="container" align="center">
+                <div id="form-input" class="row g-3">
+                    <div class="col-sm-6">
+                        <label class="form-label">Name of player</label>
+                        <input type="text" id="playerName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off">
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="form-label">Start season</label>
+                        <input type="text" id="start_season" class="form-control" placeholder="Start season" aria-label="Start season" aria-describedby="basic-addon2" autocomplete="off">
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                        <label class="form-label">End season</label>
+                        <input type="text" id="end_season" class="form-control" placeholder="End season" aria-label="End season" aria-describedby="basic-addon2" autocomplete="off">
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+                    </div>
+                    <div class="mb-3">
+                        <span id="errors"></span>
+                    </div>
                 </div>
             </div>
-            <div>
-                <canvas id="myChart" width="400" height="400"></canvas>
+
+
+            <div class="container">
+                <canvas id="myChart" width="auto" height="auto"></canvas>
             </div>
         </section>
     </main>
