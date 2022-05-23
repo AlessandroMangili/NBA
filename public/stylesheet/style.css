@@ -11325,7 +11325,7 @@ Manual adding
 	object-fit: scale-down;
 }
 
-.card {
+.owl-item > .card {
 	border: none;
 }
 
@@ -11335,7 +11335,7 @@ html, body {
 }
 
 #copertina {
-    height: 850px;
+    height: 725px;
 }
 
 #form-input {
@@ -11362,12 +11362,6 @@ html, body {
   display: block;
 }*/
 
-
-@media (max-width: 1000px) {
-  #copertina {
-    height: 700px;
-  }
-}
 
 @media (max-width: 725px) {
   #copertina {

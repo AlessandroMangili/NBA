@@ -64,11 +64,38 @@ function getPlayersTeam(team_id) {
 	  			for(let i = 0; i < players.length; i++) {
 	  				let player = players[i].split(';');
 	  				if (player[0] == team_id) {
-						let div = document.createElement("div");
-						div.setAttribute("id", player[1]);
-						let textnode = document.createTextNode("Nome: " + player[1] + " Numero maglia: "+ player[2] +" Ruolo: " + player[3] +" Data di nascita : " + player[4]);
-						div.appendChild(textnode);
-						player_div.appendChild(div);
+						let div1 = document.createElement("div");
+						div1.setAttribute("class", "col-sm-4 pb-2");
+						let div2 = document.createElement("div");
+						div2.setAttribute("class", "card border-secondary text-center");
+						let div3 = document.createElement("div");
+						div3.setAttribute("class", "card-header");
+						let header = document.createElement("h5");
+						header.innerText = player[2];
+						div3.appendChild(header);
+						let div4 = document.createElement("div");
+						div4.setAttribute("class", "card-body");
+						let title = document.createElement("h5");
+						title.setAttribute("class", "card-title");
+						title.innerText =  player[1];
+						div4.appendChild(title);
+						let ruolo = document.createElement("p");
+						ruolo.setAttribute("class", "card-text");
+						ruolo.innerText =  player[3];
+						div4.appendChild(ruolo);
+						let nascita = document.createElement("p");
+						nascita.setAttribute("class", "card-text");
+						nascita.innerText =  player[6];
+						div4.appendChild(nascita);
+						let a = document.createElement("a");
+						a.setAttribute("class", "btn btn-primary");
+						a.setAttribute("href", "#!");
+						a.innerText = "Full bio";
+						div4.appendChild(a);
+						div2.appendChild(div3);
+						div2.appendChild(div4);
+						div1.appendChild(div2);
+						player_div.appendChild(div1);
 	  				}
 	  			}
 	  			localStorage.setItem(team_id, player_div.outerHTML);
