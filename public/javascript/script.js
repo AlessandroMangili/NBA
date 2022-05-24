@@ -128,3 +128,6 @@ function httpGet(url, callback) {
 	request.send();
 }
 
+function showDiv() {
+	document.getElementById('div_score').style.display = "block";
+ }

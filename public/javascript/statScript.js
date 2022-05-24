@@ -8,6 +8,13 @@ var score = document.getElementById("div_score");
 var table = document.getElementById("table_score");
 var body = document.getElementById("body_score");
 var error = document.getElementById("errors");
+/*
+	Display the div when the button search is pressed
+*/
+function showDiv() {
+	document.getElementById('div_score').style.display = "block";
+}
+
 
 btn.addEventListener('click', (e) => {
 	e.preventDefault();

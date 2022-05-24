@@ -66,7 +66,7 @@
                         <input type="text" id="season" class="form-control" placeholder="Season" aria-label="Season" aria-describedby="basic-addon2" autocomplete="off">
                     </div>
                     <div>
-                        <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+                        <button class="btn btn-outline-secondary" id="searchPlayer" type="button" onclick="showDiv()">Search</button>
                     </div>
                     <div class="mb-3">
                         <span id="errors"></span>
@@ -74,14 +74,14 @@
                 </div>
             </div>
             
-            <div id="div_score">
+            <div id="div_score" style="display:none" > 
                 <table id="table_score" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Nome</th>
-                            <th>Stagione</th>
-                            <th>Media punti</th>
-                            <th>Media minuti giocati</th>
+                            <th>Name</th>
+                            <th>Season</th>
+                            <th>Average points</th>
+                            <th>Average time played</th>
                         </tr>
                     </thead>
                     <tbody id="body_score">
