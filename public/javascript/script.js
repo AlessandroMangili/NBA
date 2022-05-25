@@ -72,6 +72,7 @@ function getPlayersTeam(team_id) {
 
 						let front = document.createElement("div");
 						front.setAttribute("class", "card border-secondary card-front text-center");
+						front.setAttribute("id", player[1]+"f");
 						let header = document.createElement("div");
 						header.setAttribute("class", "card-header");
 						let maglia = document.createElement("h5");
@@ -95,6 +96,13 @@ function getPlayersTeam(team_id) {
 						a.setAttribute("class", "btn btn-primary");
 						a.setAttribute("href", "#!");
 						a.innerText = "Full bio";
+						a.addEventListener('click', () => {
+							front.classList.add("card-front-rotate");
+							document.getElementById(player[1]+"b").classList.remove("card-back");
+							document.getElementById(player[1]+"b").classList.add("card-back-rotate");
+							/*front.style.transform = "rotateY(180deg)";
+							document.getElementById(player[1]+"b").style.transform = "rotateY(0deg)";*/
+						});
 						body.appendChild(a);
 
 						front.appendChild(header);
@@ -102,6 +110,7 @@ function getPlayersTeam(team_id) {
 
 						let back = document.createElement("div");
 						back.setAttribute("class", "card border-secondary card-back text-center");
+						back.setAttribute("id", player[1]+"b");
 						let header_back = document.createElement("div");
 						header_back.setAttribute("class", "card-header");
 						let maglia_back = document.createElement("h5");
@@ -113,6 +122,13 @@ function getPlayersTeam(team_id) {
 						a_back.setAttribute("class", "btn btn-primary");
 						a_back.setAttribute("href", "#!"); 
 						a_back.innerText = "Back";
+						a_back.addEventListener('click', () => {
+							back.classList.remove("card-back-rotate");
+							back.classList.add("card-back");
+							document.getElementById(player[1]+"f").classList.remove("card-front-rotate");
+							/*back.style.transform = "rotateY(180deg)";
+							document.getElementById(player[1]+"f").style.transform = "rotateY(0deg)";*/
+						});
 						body_back.appendChild(a_back);
 
 						back.appendChild(header_back);
@@ -153,7 +169,3 @@ function httpGet(url, callback) {
 	};
 	request.send();
 }
-
-function showDiv() {
-	document.getElementById('div_score').style.display = "block";
- }
