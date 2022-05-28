@@ -49,11 +49,11 @@ async function getAllTeams() {
  */
 function getPlayersTeam(team_id) {
 	if(localStorage.getItem(team_id) == null) {
-		httpGet("data/player4teams.csv", function(request) {
-			if(request.status == 200) {
-				var csv = request.responseText
+		httpGet("data", function(response) {
+			if(response.status == 200) {
+				var csv = response.responseText
 				var players = csv.split('\n');
-				
+
 				/**
 				 * Rimuovere tutti i figli per quando viene selezionata un'altra squadra 
 				 **/
@@ -100,8 +100,6 @@ function getPlayersTeam(team_id) {
 							front.classList.add("card-front-rotate");
 							document.getElementById(player[1]+"b").classList.remove("card-back");
 							document.getElementById(player[1]+"b").classList.add("card-back-rotate");
-							/*front.style.transform = "rotateY(180deg)";
-							document.getElementById(player[1]+"b").style.transform = "rotateY(0deg)";*/
 						});
 						body.appendChild(a);
 
@@ -126,8 +124,6 @@ function getPlayersTeam(team_id) {
 							back.classList.remove("card-back-rotate");
 							back.classList.add("card-back");
 							document.getElementById(player[1]+"f").classList.remove("card-front-rotate");
-							/*back.style.transform = "rotateY(180deg)";
-							document.getElementById(player[1]+"f").style.transform = "rotateY(0deg)";*/
 						});
 						body_back.appendChild(a_back);
 
@@ -142,7 +138,8 @@ function getPlayersTeam(team_id) {
 	  			}
 	  			localStorage.setItem(team_id, player_div.outerHTML);
 			} else {
-				alert("La lettura del file non è avvenuta correttamente");
+				console.error(JSON.parse(response.responseText).error);
+				console.info(JSON.parse(response.responseText).message);
 			}
 		});
 	} else {
@@ -152,7 +149,6 @@ function getPlayersTeam(team_id) {
 		while (player_div.lastElementChild) {
 			player_div.removeChild(player_div.lastElementChild);
 		}
-
 		player_div.innerHTML = localStorage.getItem(team_id);
 	}
 }
