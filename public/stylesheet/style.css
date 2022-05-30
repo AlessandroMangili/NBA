@@ -11375,30 +11375,26 @@ html, body {
   text-align: center;
 }
 /**               MJ                       **/
-
+/*
 #testimonial {
   position: absolute;
-}
+}*/
 
 .centered {
   position: absolute;
-  top: 50%;
+  top: 20%;
   padding-left: 10%;
   color: white;
   display: block;
 }
-@media (max-width: 1050) {
-  #mj {
-    float: right;
-  }
-}
 
-@media (max-width: 880px) {
+
+@media (max-width: 813px) {
   #mjquote {
     display: none;
   }
 }
-@media (max-width: 512px) {
+@media (max-width: 545px) {
   #mj {
     display: none;
   }
