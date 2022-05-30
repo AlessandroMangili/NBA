@@ -10,7 +10,7 @@ var body = document.getElementById("body_score");
 var error = document.getElementById("errors");
 /*
 	Display the div when the button search is pressed
-*/
+ */
 function showDiv() {
 	document.getElementById('div_score').style.display = "block";
 }
@@ -55,7 +55,7 @@ async function individualStats(season, player_id) {
 
 /*
 funizione sincrona che data la stagione e il nome del giocatore, richiama a sua volta prima la funzione asincrona
-per ottenere l'id tramite il nome del giocatore, se questo esiste, e una volta ottnuto, verrà richiamata la funzione asincrona per ottenere 
+per ottenere l'id tramite il nome del giocatore, se questo esiste, e una volta ottenuto, verrà richiamata la funzione asincrona per ottenere 
 le statistiche della stagione passata come parametro, se null allora sarà la stagione corrente, per il determinato giocatore, sempre che quel 
 giocatore abbia giocato in quella stagione.
 */

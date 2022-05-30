@@ -11309,7 +11309,7 @@ html {
   background-repeat: no-repeat;
   min-height: 15rem;
 }
-
+/**************************************************************************************************************/
 /**
 Manual adding
 **/
@@ -11375,7 +11375,7 @@ html, body {
   text-align: center;
 }
 
-/*#testimonial {
+#testimonial {
   position: relative;
 }
 
@@ -11385,9 +11385,20 @@ html, body {
   left: 20%;
   color: white;
   display: block;
-}*/
+}
+@media (max-width: 1050) {
+  #mj {
+    float: left;
+  }
+}
 
+@media (max-width: 350px) {
+  #mj {
+    display: none;
+  }
+}
 
+/*                     */
 @media (max-width: 725px) {
   #copertina {
     height: 70%;
@@ -11399,3 +11410,6 @@ html, body {
     height: 60%;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+  body { font-family: 'Andika', sans-serif; font-size: 25px; color: black; height: 100%; }
