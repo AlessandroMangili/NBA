@@ -11374,25 +11374,31 @@ html, body {
 #table_score {
   text-align: center;
 }
+/**               MJ                       **/
 
 #testimonial {
-  position: relative;
+  position: absolute;
 }
 
 .centered {
   position: absolute;
   top: 50%;
-  left: 20%;
+  padding-left: 10%;
   color: white;
   display: block;
 }
 @media (max-width: 1050) {
   #mj {
-    float: left;
+    float: right;
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 880px) {
+  #mjquote {
+    display: none;
+  }
+}
+@media (max-width: 512px) {
   #mj {
     display: none;
   }
