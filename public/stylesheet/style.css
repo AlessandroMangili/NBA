@@ -11375,14 +11375,14 @@ html, body {
   text-align: center;
 }
 /**               MJ                       **/
-/*
+
 #testimonial {
-  position: absolute;
-}*/
+  position: relative;
+}
 
 .centered {
   position: absolute;
-  top: 20%;
+  top: 35%;
   padding-left: 10%;
   color: white;
   display: block;
@@ -11394,7 +11394,7 @@ html, body {
     display: none;
   }
 }
-@media (max-width: 545px) {
+@media (max-width: 500px) {
   #mj {
     display: none;
   }
