@@ -6,14 +6,29 @@ Manual adding
 @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
   body { font-family: 'Andika', sans-serif; font-size: 25px; color: black; height: 100%; }
 /* Class of the card image owl carousel */
+
 .card-img-top {
 	height: 20vh;
 	width: 100%;
 	object-fit: scale-down;
 }
+.card{
+  position: static!important;
+}
+.card.border-secondary.text-center.card-back-rotate{
+  position: static!important;
+  margin-top: -230px;
+}
+.card.border-secondary.text-center.card-front-rotate{
+  position: static!important;
+ 
+}
 
 .card-container {
   perspective: 200rem;
+  margin-left: 10%;
+  margin-bottom: 0%;
+  height: 260px;
 }
 
 .card-front-rotate {
@@ -40,6 +55,7 @@ Manual adding
   transition: all 0.9s;
   backface-visibility: hidden;
 }
+
 
 .owl-item > .card {
 	border: none;
