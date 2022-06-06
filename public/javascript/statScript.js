@@ -8,13 +8,31 @@ var score = document.getElementById("div_score");
 var table = document.getElementById("table_score");
 var body = document.getElementById("body_score");
 var error = document.getElementById("errors");
-/*
-	Display the div when the button search is pressed
- */
-function showDiv() {
-	document.getElementById('div_score').style.display = "block";
-}
 
+if(sessionStorage.length != 0) {
+	console.log(Object.keys(sessionStorage))
+
+	Object.keys(sessionStorage).forEach(data => {
+		
+		let row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+
+		let t_name = row.insertCell(0);
+		let t_season = row.insertCell(1);
+		let stats_pts = row.insertCell(2);
+		let stats_min = row.insertCell(3);
+		let split = sessionStorage.getItem(data).split(" ");
+		t_name.innerText = split[0] + " " + split[1];
+		t_season.innerText = split[2];
+		stats_pts.innerText = split[3];
+		stats_min.innerText = split[4];
+
+		row.addEventListener('dblclick', (e) => {
+			row.parentNode.removeChild(row);
+			sessionStorage.removeItem(split[0] + " " + split[1] + " " + split[2]);
+			if(body.rows.length == 0) score.style.display = "none";
+		});
+	});
+} else score.style.display = "none";
 
 btn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -83,24 +101,30 @@ function stats(season, playerName) {
 							if (stats.length < 1) {
 								error.innerText = "Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season;
 							} else {
-								input_player.value = "";
-								input_season.value = "";
-								error.innerText = "";
+								if(!sessionStorage.getItem(data[0].data[0].first_name + " " + data[0].last_name + " " + season)) {
+									input_player.value = "";
+									input_season.value = "";
+									error.innerText = "";
+									if(score.style.display === "none") score.style.display = "block";
 
-								var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+									let row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
 
-								let t_name = row.insertCell(0);
-								let t_season = row.insertCell(1);
-								let stats_pts = row.insertCell(2);
-								let stats_min = row.insertCell(3);
-								t_name.innerText = data[0].first_name + " " + data[0].last_name;
-								t_season.innerText = season;
-								stats_pts.innerText = stats[0].pts;
-								stats_min.innerText = stats[0].min;
+									let t_name = row.insertCell(0);
+									let t_season = row.insertCell(1);
+									let stats_pts = row.insertCell(2);
+									let stats_min = row.insertCell(3);
+									t_name.innerText = data[0].first_name + " " + data[0].last_name;
+									t_season.innerText = season;
+									stats_pts.innerText = stats[0].pts;
+									stats_min.innerText = stats[0].min;
+									sessionStorage.setItem(data[0].first_name + " " + data[0].last_name + " " + season, data[0].first_name + " " + data[0].last_name + " " + season + " " + stats[0].pts + " " + stats[0].min);
 
-								row.addEventListener('dblclick', (e) => {
-									row.parentNode.removeChild(row);
-								});
+									row.addEventListener('dblclick', (e) => {
+										row.parentNode.removeChild(row);
+										sessionStorage.removeItem(data[0].first_name + " " + data[0].last_name + " " + season);
+										if(body.rows.length == 0) score.style.display = "none";
+									});
+								} else error.innerText = "Il giocatore " + data[0].first_name + " " + data[0].last_name + " nella stagione " + season + " è già presente nella tabella";
 							}
 						}
 					)
@@ -109,24 +133,30 @@ function stats(season, playerName) {
 					if (stats.length < 1) {
 						error.innerText = "Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season;
 					} else {
-						input_player.value = "";
-						input_season.value = "";
-						error.innerText = "";
+						if(!sessionStorage.getItem(data[0].first_name + " " + data[0].last_name + " " + season)) {
+							input_player.value = "";
+							input_season.value = "";
+							error.innerText = "";
+							if(score.style.display === "none") score.style.display = "block";
 
-						var row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+							let row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
 
-						let t_name = row.insertCell(0);
-						let t_season = row.insertCell(1);
-						let stats_pts = row.insertCell(2);
-						let stats_min = row.insertCell(3);
-						t_name.innerText = data[0].first_name + " " + data[0].last_name;
-						t_season.innerText = season;
-						stats_pts.innerText = stats[0].pts;
-						stats_min.innerText = stats[0].min;
+							let t_name = row.insertCell(0);
+							let t_season = row.insertCell(1);
+							let stats_pts = row.insertCell(2);
+							let stats_min = row.insertCell(3);
+							t_name.innerText = data[0].first_name + " " + data[0].last_name;
+							t_season.innerText = season;
+							stats_pts.innerText = stats[0].pts;
+							stats_min.innerText = stats[0].min;
+							sessionStorage.setItem(data[0].first_name + " " + data[0].last_name + " " + season, data[0].first_name + " " + data[0].last_name + " " + season + " " + stats[0].pts + " " + stats[0].min);
 
-						row.addEventListener('dblclick', (e) => {
-							row.parentNode.removeChild(row);
-						});
+							row.addEventListener('dblclick', (e) => {
+								row.parentNode.removeChild(row);
+								sessionStorage.removeItem(data[0].first_name + " " + data[0].last_name + " " + season);
+								if(body.rows.length == 0) score.style.display = "none";
+							});
+						} else error.innerText = "Il giocatore " + data[0].first_name + " " + data[0].last_name + " nella stagione " + season + " è già presente nella tabella";
 					}
 				}
 			}
