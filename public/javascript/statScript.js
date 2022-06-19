@@ -8,36 +8,47 @@ var score = document.getElementById("div_score");
 var table = document.getElementById("table_score");
 var body = document.getElementById("body_score");
 var error = document.getElementById("errors");
+var btnc = document.getElementById("searchPlayerC");
+var select = document.getElementById("dati");
+var chart = document.getElementById("myChart");
 
-if(sessionStorage.length != 0) {
-	console.log(Object.keys(sessionStorage))
+if(window.location.href.split("/").pop() == "table") {
+	if(sessionStorage.length != 0) {
+		Object.keys(sessionStorage).forEach(data => {
+			
+			let row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
 
-	Object.keys(sessionStorage).forEach(data => {
-		
-		let row = body.insertRow(-1); //Inserisce la riga nel tbody all'ultima posizione
+			let t_name = row.insertCell(0);
+			let t_season = row.insertCell(1);
+			let stats_pts = row.insertCell(2);
+			let stats_min = row.insertCell(3);
+			let split = sessionStorage.getItem(data).split(" ");
+			t_name.innerText = split[0] + " " + split[1];
+			t_season.innerText = split[2];
+			stats_pts.innerText = split[3];
+			stats_min.innerText = split[4];
 
-		let t_name = row.insertCell(0);
-		let t_season = row.insertCell(1);
-		let stats_pts = row.insertCell(2);
-		let stats_min = row.insertCell(3);
-		let split = sessionStorage.getItem(data).split(" ");
-		t_name.innerText = split[0] + " " + split[1];
-		t_season.innerText = split[2];
-		stats_pts.innerText = split[3];
-		stats_min.innerText = split[4];
-
-		row.addEventListener('dblclick', (e) => {
-			row.parentNode.removeChild(row);
-			sessionStorage.removeItem(split[0] + " " + split[1] + " " + split[2]);
-			if(body.rows.length == 0) score.style.display = "none";
+			row.addEventListener('dblclick', (e) => {
+				row.parentNode.removeChild(row);
+				sessionStorage.removeItem(split[0] + " " + split[1] + " " + split[2]);
+				if(body.rows.length == 0) score.style.display = "none";
+			});
 		});
-	});
-} else score.style.display = "none";
+	} else score.style.display = "none";
 
-btn.addEventListener('click', (e) => {
-	e.preventDefault();
-	stats(input_season.value, input_player.value);
-});
+	btn.addEventListener('click', (e) => {
+		e.preventDefault();
+		stats(input_season.value, input_player.value);
+	});
+} else {
+	var myChart = null;
+	drawChart();
+	
+	btnc.addEventListener('click', (e) => {
+		e.preventDefault();
+		createChart(start_season.value, end_season.value, playerName.value, select.value);
+	});
+}
 
 
 /*
@@ -48,7 +59,7 @@ async function playerIdByName(playerName) {
 		method: "GET"
 	});
 	
-	var player = await playerObj.json();
+	let player = await playerObj.json();
 	return player.data;
 }
 
@@ -67,7 +78,7 @@ async function individualStats(season, player_id) {
 		});
 	}
 
-	var stats = await statsObj.json();
+	let stats = await statsObj.json();
 	return stats.data;
 }
 
@@ -101,7 +112,7 @@ function stats(season, playerName) {
 							if (stats.length < 1) {
 								error.innerText = "Non ci sono statitiche riguandanti il giocatore: "+ data[0].first_name + " " + data[0].last_name +" nella stagione " + season;
 							} else {
-								if(!sessionStorage.getItem(data[0].data[0].first_name + " " + data[0].last_name + " " + season)) {
+								if(!sessionStorage.getItem(data[0].first_name + " " + data[0].last_name + " " + season)) {
 									input_player.value = "";
 									input_season.value = "";
 									error.innerText = "";
@@ -167,9 +178,112 @@ function stats(season, playerName) {
 /**
 * Parte dedicata alle funzioni per il file IndividualStats-chart
 */
-function createChart() {
+var start_season = document.getElementById("start_season");
+var end_season = document.getElementById("end_season");
+
+function createChart(s_season, e_season, player, option) {
+	if (player == "") {
+		error.innerText = "Devi inserire il nome di un giocatore";
+		return;
+	}
+
+	if(s_season >= e_season) {
+		error.innerText = "La data di inizio non può essere maggiore o uguale della data di fine";
+		return;
+	}
+
+	if(s_season == "" || e_season == "") {
+		error.innerText = "Le date non possono essere vuote";
+		return;
+	}
+
+	if(e_season - s_season >= 20) {
+		error.innerText = "Il range di date è troppo ampio";
+		return;
+	}
+	
+	myChart.clear();
+	myChart.data.labels = [];
+	myChart.data.datasets[0].data = [];
+	myChart.update();
+
+	playerIdByName(player)
+	.then(data => 
+		{
+			if (data.length > 1) {
+				error.innerText = "Presenza di più " + player + "! inserisci il nome completo";
+			} else if (data.length < 1) {
+				error.innerText = "Non ci sono giocatori con il seguente nome: " + player;
+			} else {
+				for(let i = s_season; i <= e_season; i++) {
+					var map = new Map();
+					individualStats(i, data[0].id)
+					.then(stats => {
+						if(stats.length < 1) {
+							switch(option) {
+								case "Punti":
+									map.set(i, 0);
+									break;
+								case "Minuti":
+									map.set(i, 0);
+									break;
+								case "Assist":
+									map.set(i, 0);
+									break;
+								case "Rimbalzi":
+									map.set(i, 0);
+									break;
+								case "Palle rubate":
+									map.set(i, 0);
+									break;
+							}
+						} else {
+							switch(option) {
+								case "Punti":
+									map.set(i, stats[0].pts);
+									break;
+								case "Minuti":
+									map.set(i, stats[0].min.replace(":", "."));
+									break;
+								case "Assist":
+									map.set(i, stats[0].ast);
+									break;
+								case "Rimbalzi":
+									map.set(i, stats[0].reb);
+									break;
+								case "Palle rubate":
+									map.set(i, stats[0].stl);
+									break;
+							}
+						}
+						//Dato che sono in ordine sparso per la funzione async, vengono riordinati
+						if(map.size == (e_season - s_season) + 1) {
+							st = new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
+							//console.log(st);
+							st.forEach((v,k) => {
+								myChart.data.labels.push(k);
+								myChart.data.datasets[0].data.push(v);
+							});
+							myChart.update();
+						}
+					}).catch(error => {
+						console.error("Errore " + error);
+					})
+				}
+				
+				myChart.options.plugins.title.text = data[0].first_name + " " + data[0].last_name;
+				myChart.data.datasets[0].label = option;
+				myChart.update();
+
+				error.innerText = "";			
+			}
+		}
+	);
+}
+
+function drawChart() {
 	const ctx = document.getElementById('myChart').getContext('2d');
-	const myChart = new Chart(ctx, {
+	myChart = new Chart(ctx, {
 	    type: 'line',
 	    data: {
 	        labels: [],
@@ -188,21 +302,18 @@ function createChart() {
 	        }]
 	    },
 	    options: {
+			maintainAspectRatio: false,
 	        scales: {
 	            y: {
 	                beginAtZero: true
 	            }
-	        }
+	        },
+			plugins: {
+				title: {
+					display: true,
+					text: ''
+				}
+			}
 	    }
 	});
-	
-	myChart.data.labels.push("Lebron");
-	myChart.data.datasets[0].data.push(36);
-	myChart.data.labels.push("Lebron");
-	myChart.data.datasets[0].data.push(20);
-	myChart.data.labels.push("Lebron");
-	myChart.data.datasets[0].data.push(25);
-	myChart.data.labels.push("Lebron");
-	myChart.data.datasets[0].data.push(10);
-	myChart.update();
 }

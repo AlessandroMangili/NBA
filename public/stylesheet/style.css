@@ -70,7 +70,6 @@ html, body {
 #table_score {
   text-align: center;
 }
-/**               MJ                       **/
 
 #testimonial {
   position: relative;
@@ -84,28 +83,64 @@ html, body {
   display: block;
 }
 
+#chartBox {
+  width: 100%;
+  height: 500px;
+}
+
 
 @media (max-width: 813px) {
   #mjquote {
     display: none;
   }
 }
+
+@media (max-width: 725px) {
+  #copertina {
+    height: 70%;
+  }
+
+  #mj-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+  #chartBox {
+    width: 100%;
+    height: 400px;
+  }
+}
+
 @media (max-width: 500px) {
   #mj {
     display: none;
   }
+
+  #mj-img {
+    height: 200px;
+  }
 }
 
-/*                     */
-@media (max-width: 725px) {
-  #copertina {
-    height: 70%;
+@media (max-width: 520px) {
+  #chartBox {
+    width: auto;
+    height: 300px;
   }
 }
 
 @media (max-width: 350px) {
   #copertina {
     height: 60%;
+  }
+
+  #mj-img {
+    height: 130px;
+  }
+
+  #chartBox {
+    width: auto;
+    height: 250px;
   }
 }
 

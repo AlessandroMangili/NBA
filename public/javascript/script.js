@@ -64,8 +64,7 @@ function getPlayersTeam(team_id) {
 	  			for(let i = 0; i < players.length; i++) {
 	  				let player = players[i].split(';');
 	  				if (player[0] == team_id) {
-						
-						let div1 = document.createElement("div");
+						var div1 = document.createElement("div");
 						div1.setAttribute("class", "col-sm-4 pb-2");
 						let container = document.createElement("div");
 						container.setAttribute("class", "card-container");
@@ -125,6 +124,7 @@ function getPlayersTeam(team_id) {
 							back.classList.add("card-back");
 							document.getElementById(player[1]+"f").classList.remove("card-front-rotate");
 						});
+
 						body_back.appendChild(a_back);
 
 						back.appendChild(header_back);
@@ -150,6 +150,20 @@ function getPlayersTeam(team_id) {
 			player_div.removeChild(player_div.lastElementChild);
 		}
 		player_div.innerHTML = localStorage.getItem(team_id);
+
+		// Ciclo per aggiungere l'evento ai pulsanti dato che passando per il local storage non vengono salvati
+		for(let i = 0; i < player_div.children[0].children.length; i++) {
+			player_div.children[0].children[i].firstChild.firstChild.lastChild.lastChild.addEventListener('click', () => {
+				player_div.children[0].children[i].firstChild.firstChild.classList.add("card-front-rotate");
+				document.getElementById(player_div.children[0].children[i].firstChild.lastChild.id).classList.remove("card-back");
+				document.getElementById(player_div.children[0].children[i].firstChild.lastChild.id).classList.add("card-back-rotate");
+			});
+			player_div.children[0].children[i].firstChild.lastChild.lastChild.lastChild.addEventListener('click', () => {
+				player_div.children[0].children[i].firstChild.lastChild.classList.remove("card-back-rotate");
+				player_div.children[0].children[i].firstChild.lastChild.classList.add("card-back");
+				document.getElementById(player_div.children[0].children[i].firstChild.firstChild.id).classList.remove("card-front-rotate");
+			});
+		}
 	}
 }
 

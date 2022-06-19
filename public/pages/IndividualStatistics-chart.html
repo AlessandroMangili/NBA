@@ -20,7 +20,7 @@
         <link href="../stylesheet/style.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     </head>
-<body class="d-flex flex-column h-100" onload="createChart()">
+<body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -30,13 +30,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownIndividualStatistics" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Individual statistics</a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownIndividualStatistics">
-                                <li><a class="dropdown-item" href="table">Table</a></li>
-                                <li><a class="dropdown-item" href="#!">Graph</a></li>
-                            </ul>
-                        </li>-->
                         <li class="nav-item"><a class="nav-link" href="table">Table</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Chart</a></li>
                     </ul>
@@ -47,35 +40,46 @@
         <!-- Testimonial section-->
         <section>
             <div id="testimonial" class="row py-5">
-                <img src="../images/mj.jpg" alt="Michael Jordan" width="100%" height="100%" >
-                <!--<div class="centered">
-                    <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can,t accept not trying."</div>
-                    <div class="fw-bold">
+                <img src="../images/mj.jpg" alt="Michael Jordan" id="mj-img" width="100%" height="100%" >
+                <div class="centered" id="mj">
+                    <div class="fs-4 mb-4 fst-italic">"I can accept failure, everyone fails at something. But i can't accept not trying."</div>
+                    <div class="fw-bold" id="mjquote">
                         Micheal Jordan
                         <span class="fw-bold text-primary mx-1">/</span>
                         The greatest basketball player of all time
                     </div>
-                </div>-->
+                </div>
             </div>
         </section>
 
         <section>
             <div class="container" align="center">
                 <div id="form-input" class="row g-3">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                         <label class="form-label">Name of player</label>
                         <input type="text" id="playerName" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon2" autocomplete="off">
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-sm-6">
                         <label class="form-label">Start season</label>
                         <input type="text" id="start_season" class="form-control" placeholder="Start season" aria-label="Start season" aria-describedby="basic-addon2" autocomplete="off">
                     </div>
-                    <div class="col-sm-3 mb-3">
+                    <div class="col-sm-6">
                         <label class="form-label">End season</label>
                         <input type="text" id="end_season" class="form-control" placeholder="End season" aria-label="End season" aria-describedby="basic-addon2" autocomplete="off">
                     </div>
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-5 mb-3">
+                        <label class="form-label">Dati visualizzati</label>
+                        <select class="form-select" id="dati">
+                            <option>Punti</option>
+                            <option>Minuti</option>
+                            <option>Assist</option>
+                            <option>Rimbalzi</option>
+                            <option>Palle rubate</option>
+                        </select>
+                    </div>
                     <div>
-                        <button class="btn btn-outline-secondary" id="searchPlayer" type="button">Search</button>
+                        <button class="btn btn-outline-secondary" id="searchPlayerC" type="button">Search</button>
                     </div>
                     <div class="mb-3">
                         <span id="errors"></span>
@@ -83,9 +87,8 @@
                 </div>
             </div>
 
-
-            <div class="container">
-                <canvas id="myChart" width="auto" height="auto"></canvas>
+            <div class="container" id="chartBox">
+                <canvas id="myChart" width="100%" height="100%"></canvas>
             </div>
         </section>
     </main>
