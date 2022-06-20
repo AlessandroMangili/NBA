@@ -42,11 +42,20 @@ if(window.location.href.split("/").pop() == "table") {
 	});
 } else {
 	var myChart = null;
+	var range = null;
+	var selectction = null;
+	var index = 0;
 	drawChart();
 	
 	btnc.addEventListener('click', (e) => {
 		e.preventDefault();
 		createChart(start_season.value, end_season.value, playerName.value, select.value);
+	});
+
+	btnc.addEventListener('dblclick', (e) => {
+		e.preventDefault();
+		myChart.destroy();
+		drawChart();
 	});
 }
 
@@ -201,11 +210,6 @@ function createChart(s_season, e_season, player, option) {
 		error.innerText = "Il range di date è troppo ampio";
 		return;
 	}
-	
-	myChart.clear();
-	myChart.data.labels = [];
-	myChart.data.datasets[0].data = [];
-	myChart.update();
 
 	playerIdByName(player)
 	.then(data => 
@@ -260,21 +264,65 @@ function createChart(s_season, e_season, player, option) {
 						if(map.size == (e_season - s_season) + 1) {
 							st = new Map([...map].sort((a, b) => String(a[0]).localeCompare(b[0])))
 							//console.log(st);
-							st.forEach((v,k) => {
-								myChart.data.labels.push(k);
-								myChart.data.datasets[0].data.push(v);
-							});
+
+							if(range != e_season - s_season || selectction != option) {
+								//Pulisci il grafico per l'iserimento di un nuovo giocatore
+								myChart.data.labels = [];
+								myChart.data.datasets = [];
+								myChart.update();
+
+								range = e_season - s_season;
+								selectction = option;
+								
+								index = 0;
+								dataset = [];
+								dataset[index] = {
+									borderWidth: 2,
+									label: data[0].first_name + " " + data[0].last_name,
+									showLine: true,
+									spanGaps: true,
+									backgroundColor: 'rgba(255, 99, 132, 0.2)',
+									borderColor: 'rgba(255, 99, 132, 1)',
+									data : []
+								}
+								
+								st.forEach((v,k) => {
+									myChart.data.labels.push(k);
+									dataset[index].data.push(v);
+								});
+								myChart.data.datasets.push(dataset[index]);
+								index++;
+							} else {
+								let primo = Math.floor(Math.random() * 255);
+								let secondo = Math.floor(Math.random() * 255);
+								let terzo = Math.floor(Math.random() * 255);
+
+								let contiene = isIn(dataset, index,  data[0].first_name + " " + data[0].last_name);
+								if(!contiene) {										
+									dataset[index] = {
+										borderWidth: 2,
+										label: data[0].first_name + " " + data[0].last_name,
+										showLine: true,
+										spanGaps: true,
+										backgroundColor: 'rgba('+ primo  + ','+ secondo + ',' + terzo + ', 0.2)',
+										borderColor: 'rgba('+ primo + ','+ secondo + ',' + terzo + ', 1)',
+										data : []
+									}
+									//Aggiungi un nuovo giocatore al grafico con già giocatori
+									st.forEach((v,k) => {
+										dataset[index].data.push(v);
+									});
+									myChart.data.datasets.push(dataset[index]);
+									index++;
+								}
+							}
+							myChart.options.plugins.title.text = option;
 							myChart.update();
 						}
-					}).catch(error => {
-						console.error("Errore " + error);
-					})
+					}).catch(er => {
+						console.error("Errore " + er);
+					});
 				}
-				
-				myChart.options.plugins.title.text = data[0].first_name + " " + data[0].last_name;
-				myChart.data.datasets[0].label = option;
-				myChart.update();
-
 				error.innerText = "";			
 			}
 		}
@@ -287,19 +335,7 @@ function drawChart() {
 	    type: 'line',
 	    data: {
 	        labels: [],
-	        datasets: [{
-	            label: '',
-	            data: [],
-	            backgroundColor: [
-	                'rgba(255, 99, 132, 0.2)'
-	            ],
-	            borderColor: [
-	                'rgba(255, 99, 132, 1)'
-	            ],
-	            borderWidth: 2,
-				showLine: true,
-				spanGaps: true
-	        }]
+	        datasets: []
 	    },
 	    options: {
 			maintainAspectRatio: false,
@@ -316,4 +352,13 @@ function drawChart() {
 			}
 	    }
 	});
+}
+
+function isIn(dataset, index, nome) {
+	for(let j = 0; j < index; j++) {
+		if(dataset[j].label == nome) {
+			return true;
+		}
+	}
+	return false;
 }
