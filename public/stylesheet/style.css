@@ -7,6 +7,7 @@ Manual adding
   body { font-family: 'Andika', sans-serif; font-size: 25px; color: black; height: 100%; }
 /* Class of the card image owl carousel */
 
+
 .card-img-top {
 	height: 20vh;
 	width: 100%;
@@ -143,5 +144,4 @@ html, body {
     height: 250px;
   }
 }
-
 
