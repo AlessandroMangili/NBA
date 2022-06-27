@@ -23,10 +23,23 @@ var $owl = $(".owl-carousel").owlCarousel({
 	}
 });
 
+/**
+ * Pulisce il localStorage dopo 1 mese
+ */
+const month = 1;
+var now = new Date().getTime();
+var setupTime = localStorage.getItem('setupTime')
+if (setupTime == null) {
+	localStorage.setItem('setupTime', now)
+} else if(now - setupTime >= month*1000*60*60*24*30) {
+	localStorage.clear()
+	localStorage.setItem('setupTime', now);
+}
+
 var player_div = document.getElementById("players4team");
 
 /**
- * Funzione asincrona che interrogando le API, restituisce tutti i team attuali in NBA
+ * Funzione asincrona che interrogando le API, salva tutti i teaem NBA nell'owl carousel
  */
 async function getAllTeams() {
 	if(localStorage.getItem("teams") == null){
@@ -45,7 +58,7 @@ async function getAllTeams() {
 }
 
 /**
- * Funzione che dato l'id di una squadra, inserisci nel tag id='players4team' i giocatori che giocano attualmente nella squadra
+ * Funzione che dato l'id di una squadra, crea una card per giocatore presente nel dato team contenete tutte le informazioni
  */
 function getPlayersTeam(team_id) {
 	if(localStorage.getItem(team_id) == null) {

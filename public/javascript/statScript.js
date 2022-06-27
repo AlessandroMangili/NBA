@@ -60,9 +60,9 @@ if(window.location.href.split("/").pop() == "table") {
 }
 
 
-/*
-funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
-*/
+/**
+ * funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
+ */
 async function playerIdByName(playerName) {
 	var playerObj = await fetch("https://www.balldontlie.io/api/v1/players?search="+playerName, {
 		method: "GET"
@@ -72,10 +72,10 @@ async function playerIdByName(playerName) {
 	return player.data;
 }
 
-/*
-funzione che data la stagione, non nulla o vuota, e l'id di un giocatore, ritorna le statistiche per quella stagione se
-il giocatore esiste e se ha giocato in quella stagione
-*/
+/**
+ * funzione che data la stagione, e l'id di un giocatore, ritorna le statistiche per quella stagione, se non viene 
+ * specificata la stagione, allora sarà presa quella attuale
+ */
 async function individualStats(season, player_id) {
 	if(season != " " && season != null) {
 		var statsObj = await fetch("https://www.balldontlie.io/api/v1/season_averages?season="+season+"&player_ids[]="+player_id, {
@@ -91,12 +91,10 @@ async function individualStats(season, player_id) {
 	return stats.data;
 }
 
-/*
-funizione sincrona che data la stagione e il nome del giocatore, richiama a sua volta prima la funzione asincrona
-per ottenere l'id tramite il nome del giocatore, se questo esiste, e una volta ottenuto, verrà richiamata la funzione asincrona per ottenere 
-le statistiche della stagione passata come parametro, se null allora sarà la stagione corrente, per il determinato giocatore, sempre che quel 
-giocatore abbia giocato in quella stagione.
-*/
+/**
+ * funizione che data la stagione e il nome del giocatore, inserisce nella tabella una nuova riga riguardante il giocatore, la stagione,
+ * la media punti e la media minuti giocati
+ */
 function stats(season, playerName) {
 	if (playerName == "") {
 		error.innerText = "Devi inserire il nome di un giocatore";
@@ -190,6 +188,10 @@ function stats(season, playerName) {
 var start_season = document.getElementById("start_season");
 var end_season = document.getElementById("end_season");
 
+/**
+ * Data la stagione di inizio, la stagione di fine, il nome del giocatore e l'opzione di visualizzazione, crea il grafico+
+ * sulla base della statistica scelta per quel giocatore in quel determinato range di date
+ */
 function createChart(s_season, e_season, player, option) {
 	if (player == "") {
 		error.innerText = "Devi inserire il nome di un giocatore";
@@ -329,6 +331,9 @@ function createChart(s_season, e_season, player, option) {
 	);
 }
 
+/**
+ * Funzione per creare il grafico
+ */
 function drawChart() {
 	const ctx = document.getElementById('myChart').getContext('2d');
 	myChart = new Chart(ctx, {
@@ -354,8 +359,11 @@ function drawChart() {
 	});
 }
 
-function isIn(dataset, index, nome) {
-	for(let j = 0; j < index; j++) {
+/**
+ * Funzione che controlla se il nome del giocatore è presente nel dataset corrispondente
+ */
+function isIn(dataset, dimensione, nome) {
+	for(let j = 0; j < dimensione; j++) {
 		if(dataset[j].label == nome) {
 			return true;
 		}
