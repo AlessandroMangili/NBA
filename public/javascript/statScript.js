@@ -60,7 +60,7 @@ if(window.location.href.split("/").pop() == "table") {
 }
 
 
-/*
+/**
  *	funzione che dato il nome di un giocatore, ritorna il suo id se questo è presente
  */
 async function playerIdByName(playerName) {
@@ -72,7 +72,7 @@ async function playerIdByName(playerName) {
 	return player.data;
 }
 
-/*
+/**
  * funzione che data la stagione, e l'id di un giocatore, ritorna le statistiche per quella stagione, se non viene 
  * specificata la stagione, allora sarà presa quella attuale
  */
@@ -330,7 +330,7 @@ function createChart(s_season, e_season, player, option) {
 		}
 	);
 }
-/*
+/**
  * Funzione per creare il grafico
  */
 function drawChart() {
@@ -357,7 +357,7 @@ function drawChart() {
 	    }
 	});
 }
-/*
+/**
  * Funzione che controlla se il nome del giocatore è presente nel dataset corrispondente
  */
 function isIn(dataset, index, nome) {

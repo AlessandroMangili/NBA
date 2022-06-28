@@ -8,12 +8,10 @@
   }
   @media (prefers-color-scheme: dark){
   .card{
-    background-color:#191d21;
-    border: 1px solid rgba(255, 255, 255, 0.125);
+      background-color:#191d21;
+      border: 1px solid rgba(255, 255, 255, 0.125);
     }
   }
-
-
   @media (prefers-color-scheme: dark){ 
     .table-striped>tbody>tr:nth-of-type(even)>*{
       color: white !important;
@@ -32,19 +30,19 @@
   }
 @media (prefers-color-scheme: dark){ 
         .table {
-            color: #d3d3d3;
+          color: #d3d3d3;
         }
     }
     @media (prefers-color-scheme: dark){ 
         .form-control {
-            background-color: black;
-            color: whitesmoke;
+          background-color: black;
+          color: whitesmoke;
         }
     }
     @media (prefers-color-scheme: dark){ 
         .btn-outline-secondary {
             color: white;
-        border-color: whitesmoke;
+            border-color: whitesmoke;
         }
     }
     

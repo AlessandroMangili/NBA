@@ -1,13 +1,7 @@
-/**************************************************************************************************************/
-/**
-Manual adding
-**/
-
 @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
   body { font-family: 'Andika', sans-serif; font-size: 25px; color: black; height: 100%; }
+
 /* Class of the card image owl carousel */
-
-
 .card-img-top {
 	height: 20vh;
 	width: 100%;
@@ -55,6 +49,75 @@ html, body {
     overflow-x: hidden;
     max-width: 100%;
 }
+
+footer {
+  background-color: rgb(33, 37, 41)!important;
+  bottom: 0px;
+}
+
+.navbar {
+  background-color: rgb(33, 37, 41)!important;
+}
+
+/* INIZIO toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 26px;
+  left: 0px;
+  bottom: 1px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(34px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  background-size: cover;
+	background-image: url('../images/luna.jpg'); 
+	display:block;
+}
+/* FINE */
 
 #copertina {
     height: 725px;
