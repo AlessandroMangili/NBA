@@ -128,6 +128,16 @@ function getPlayersTeam(team_id) {
 						header_back.appendChild(maglia_back); 
 						let body_back = document.createElement("div");
 						body_back.setAttribute("class", "card-body");
+						let altezza = document.createElement("p");
+						altezza.setAttribute("class", "card-text");
+						altezza.innerText = "Altezza: ";
+						altezza.innerText =  player[4];
+						body_back.appendChild(altezza);
+						let massa = document.createElement("p");
+						massa.setAttribute("class", "card-text");
+						massa.innerText = "Peso: ";
+						massa.innerText =  player[5];
+						body_back.appendChild(massa);
 						let a_back = document.createElement("a");
 						a_back.setAttribute("class", "btn btn-primary");
 						a_back.setAttribute("href", "#!"); 
@@ -193,3 +203,11 @@ function httpGet(url, callback) {
 	request.send();
 }
 
+const darkModeToggle = document.querySelector('dark-mode-toggle');
+if(darkModeToggle.dark == 'on'){
+	document.getElementById("mj-img").src="../images/mjDark.jpg";
+}
+else if(darkModeToggle.light == 'on')
+{
+	document.getElementById("mj-img").src="../images/mj.jpg";
+}

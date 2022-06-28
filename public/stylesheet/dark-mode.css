@@ -38,6 +38,7 @@
     @media (prefers-color-scheme: dark){ 
         .form-control {
             background-color: black;
+            color: whitesmoke;
         }
     }
     @media (prefers-color-scheme: dark){ 
@@ -46,3 +47,5 @@
         border-color: whitesmoke;
         }
     }
+    
+    
