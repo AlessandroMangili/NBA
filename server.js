@@ -1,7 +1,7 @@
 const express = require('express');
-const res = require('express/lib/response');
 const path = require('path');
 const fs = require('fs');
+
 const app = express();
 const host = "127.0.0.1"
 const port = process.env.PORT || 8000;

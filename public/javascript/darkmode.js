@@ -13,7 +13,9 @@ if(localStorage.getItem("click") == null) {
 
 toggle.addEventListener("click", () => {
 	link.setAttribute("media", !toggle.checked ? "(prefers-color-scheme: light)" : "(prefers-color-scheme: dark)");
-	if(window.location.href.split("/").pop() == "table")
-	document.getElementById("mj-img").src = !toggle.checked ? "../images/mj.jpg" : "../images/mjDark.jpg";
-	localStorage.setItem("click", localStorage.getItem("click") == "off" ? "on" : "off");
+	if(window.location.href.split("/").pop() == "table") {
+		document.getElementById("mj-img").src = !toggle.checked ? "../images/mj.jpg" : "../images/mjDark.jpg";
+	}
+	localStorage.setItem("click", toggle.checked ? "on" : "off");
+	window.dispatchEvent(new Event('storage')) //Aggiunge l'evento a window in modo tale che quando viene cliccata la darkmode, l'evento si attiva
 });

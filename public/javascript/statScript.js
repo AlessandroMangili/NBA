@@ -46,6 +46,31 @@ if(window.location.href.split("/").pop() == "table") {
 	var selectction = null;
 	var index = 0;
 	drawChart();
+
+	if(localStorage.getItem("click") == "on") {
+		let ax = 
+		{
+			x: 
+			{  // <-- axis is not array anymore, unlike before in v2.x: '[{'
+				grid: 
+				{
+			  		color: 'white',
+			  		borderColor: 'white'
+				}
+			},
+			y: 
+			{
+				beginAtZero: true,
+				grid: 
+				{
+			  		color: 'white',
+			  		borderColor: 'white'
+				}
+			}
+		}
+		myChart.options.scales = ax;
+		myChart.update();
+	}
 	
 	btnc.addEventListener('click', (e) => {
 		e.preventDefault();
@@ -56,6 +81,34 @@ if(window.location.href.split("/").pop() == "table") {
 		e.preventDefault();
 		myChart.destroy();
 		drawChart();
+	});
+
+	/**
+	 * Funzione per cambiare le linee del grafico al cambiamento del tema
+	 */
+	window.addEventListener("storage", event => {
+		let ax = 
+		{
+			x: 
+			{  // <-- axis is not array anymore, unlike before in v2.x: '[{'
+				grid: 
+				{
+			  		color: localStorage.getItem("click") == "off" ? 'rgba(0, 0, 0, 0.1)' : 'white',
+			  		borderColor: localStorage.getItem("click") == "off" ? 'rgba(0, 0, 0, 0.1)' : 'white'
+				}
+			},
+			y: 
+			{
+				beginAtZero: true,
+				grid: 
+				{
+			  		color: localStorage.getItem("click") == "off" ? 'rgba(0, 0, 0, 0.1)' : 'white',
+			  		borderColor: localStorage.getItem("click") == "off" ? 'rgba(0, 0, 0, 0.1)' : 'white'
+				}
+			}
+		}
+		myChart.options.scales = ax;
+		myChart.update();
 	});
 }
 
@@ -320,6 +373,7 @@ function createChart(s_season, e_season, player, option) {
 							}
 							myChart.options.plugins.title.text = option;
 							myChart.update();
+							localStorage.setItem("chart", myChart);
 						}
 					}).catch(er => {
 						console.error("Errore " + er);
