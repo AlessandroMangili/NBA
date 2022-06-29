@@ -3,11 +3,11 @@
 </p>
 
 ## What is "All of NBA"
-This is a project useful to display all of the basic information about basketball NBA and the statistics of all players regular and post season
+This is a project useful to display all of the basic information about basketball NBA and the statistics of all players of regular season
 
 ### Addiotional info
-This web application is based on the use of ajax for the asynchronous reception of data, bootstrap for the front-end and nodejs (express) for the back-end development.
+This web application is based on the use of ajax for the asynchronous reception of data, bootstrap for the front-end and nodejs (express) & javascript for the back-end development.
 
 ### How to run the project locally
-`node server.js` <br>
+In the same folder as the server.js run the command: `node server.js` <br>
 The server will be running in localhost:8000
