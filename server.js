@@ -86,9 +86,7 @@ app.get('/:name', (req, res) => {
                                 message:"Errore nella lettura del file",
                                 error : err
                             }
-                            const jsonContent = JSON.stringify(responseData);
-                            res.writeHead(500);
-                            res.end(jsonContent);
+                            res.status(500).end(JSON.stringify(responseData));
                         }
                         res.send(data);
                     });
@@ -97,9 +95,7 @@ app.get('/:name', (req, res) => {
                         message:"Il file per la lettura dei giocatori per squadra non esiste o non è stato trovato",
                         error : "Errore apertura file"
                     }
-                    const jsonContent = JSON.stringify(responseData);
-                    res.writeHead(500);
-                    res.end(jsonContent);
+                    res.status(500).end(JSON.stringify(responseData));
                 }
             });
             break;
